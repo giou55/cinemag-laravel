@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    public $table = 'table_posts';
+    public $table = 'posts';
     use HasFactory;
 }

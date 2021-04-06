@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTablePosts extends Migration
+class AddUserIdToPosts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateTablePosts extends Migration
      */
     public function up()
     {
-        Schema::create('table_posts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('title', 255);
-            $table->text('body');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->integer('user_id');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateTablePosts extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_posts');
+        Schema::table('posts', function (Blueprint $table) {
+            //
+        });
     }
 }

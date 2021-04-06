@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Auth;
 
 class PostsController extends Controller
 {
@@ -52,6 +53,7 @@ class PostsController extends Controller
             $post = new Post();
             $post->title = $request->get('title');
             $post->body = $request->get('body');
+            $post->user_id = Auth::user()->id;
             if($post->save()) {
                 return redirect('/posts');
             } else {
