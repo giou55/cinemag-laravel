@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,9 @@ use App\Http\Controllers\PostsController;
 |
 */
 
-Route::get('/', function(){
-    return view('home');
-});
+// Route::get('/', function(){
+//     return view('home');
+// });
 
 // Route::get('/', [PostsController::class, 'home ']);
 
@@ -34,4 +35,5 @@ Route::any('/delete_post/{post}', [PostsController::class, 'delete_post'])->name
 Route::any('/search', [PostsController::class, 'search'])->name('search');     
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
