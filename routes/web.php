@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +18,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Route::get('/', function(){
-//     return view('home');
-// });
-
-// Route::get('/', [PostsController::class, 'home ']);
-
 Route::get('/posts', [PostsController::class, 'posts'])->name('posts');
 
 Route::any('/newpost', [PostsController::class, 'newpost'])->name('newpost');
@@ -32,7 +28,8 @@ Route::any('/edit_post/{post}', [PostsController::class, 'edit_post'])->name('po
 
 Route::any('/delete_post/{post}', [PostsController::class, 'delete_post'])->name('post.delete');
 
-Route::any('/search', [PostsController::class, 'search'])->name('search');     
+Route::any('/search', [PostsController::class, 'search'])->name('search');   
+
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

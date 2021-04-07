@@ -46,6 +46,11 @@
                         @endif
                     </ul>
 
+                    <form class="d-flex" method="GET" action="{{ route('search') }}">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
