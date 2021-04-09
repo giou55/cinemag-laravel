@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -24,6 +24,7 @@ class PostsController extends Controller
     public function edit_post(Post $post, Request $request) {
         if ($request->method()== 'POST') {
             $post->title = $request->get('title');
+            $post->category = $request->get('category');
             $post->body = $request->get('body');
             if($post->save()) {
                 return redirect('posts');
@@ -38,8 +39,9 @@ class PostsController extends Controller
     }
 
     public function delete_post(Post $post) {
-       $post->delete();
-       return redirect('posts');
+        if (Auth::user()->id != $post->user->id) return redirect('posts');
+        $post->delete();
+        return redirect('posts');
     }
 
     public function search(Request $request) {
@@ -48,10 +50,11 @@ class PostsController extends Controller
         return view('posts', ['posts' => $posts]);
     }
 
-    public function newpost(Request $request) {
+    public function new_post(Request $request) {
         if ($request->method()== 'POST') {
             $post = new Post();
             $post->title = $request->get('title');
+            $post->category = $request->get('category');
             $post->body = $request->get('body');
             $post->user_id = Auth::user()->id;
             if($post->save()) {
@@ -63,6 +66,6 @@ class PostsController extends Controller
         if ($request->method()== 'GET') {
             $msg = "";
         }
-        return view('newpost', ['text' => $msg]);
+        return view('new_post', ['text' => $msg]);
     }
 }

@@ -9,4 +9,8 @@ class Post extends Model
 {
     public $table = 'posts';
     use HasFactory;
+
+    public function user() {
+        return $this->belongsTo('\App\Models\User');
+    }
 }

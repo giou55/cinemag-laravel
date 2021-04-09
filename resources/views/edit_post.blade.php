@@ -8,6 +8,9 @@
                 <div class="mb-3">
                     <input class="form-control" type="text" name="title" placeholder="Title here..." value="{{ $post->title }}">
                 </div>
+                 <div class="mb-3">
+                    <input class="form-control" type="text" name="category" placeholder="Category here..." value="{{ $post->category }}">
+                </div>
                 <div class="mb-3">
                     <textarea class="form-control" name="body" rows="10" cols="30">{{ $post->body }}
                     </textarea>

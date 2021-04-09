@@ -41,7 +41,7 @@
                         </li>
                         @if (Auth::check())
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('newpost') }}">New Post</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('post.new') }}">New Post</a>
                         </li>
                         @endif
                     </ul>

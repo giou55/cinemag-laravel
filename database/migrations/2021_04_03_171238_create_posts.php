@@ -17,6 +17,7 @@ class CreatePosts extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title', 255);
+            $table->string('category', 255);
             $table->text('body');
         });
     }
