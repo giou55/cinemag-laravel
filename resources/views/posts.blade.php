@@ -3,8 +3,10 @@
 @section('content')
         <div class="container-sm">
             <h2>My Posts</h2>
-            @foreach ($posts as $post)
-                @include('includes.post')
-            @endforeach
+            <div style="display: flex">
+                @foreach ($posts as $post)
+                    @include('includes.post')
+                @endforeach
+            </div>
         </div>
 @endsection

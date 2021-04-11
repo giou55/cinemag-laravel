@@ -57,6 +57,11 @@ class PostsController extends Controller
             $post->category = $request->get('category');
             $post->body = $request->get('body');
             $post->user_id = Auth::user()->id;
+            if ($request->hasFile('photo')) {
+                $newfilename = time().$request->file('photo')->getClientOriginalName();
+                $request->file('photo')->storeAs('public/post_images', $newfilename);
+                $post->image = $newfilename;
+            }
             if($post->save()) {
                 return redirect('/posts');
             } else {

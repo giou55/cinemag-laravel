@@ -15,7 +15,7 @@
                     <textarea class="form-control" name="body" rows="10" cols="30"></textarea>
                 </div>
                 <div class="mb-3">
-                    <input class="form-control" type="file" name="photo">
+                     <input class="form-control" type="file" name="photo">
                 </div>
                 <button class="btn btn-primary mb-3" type="submit">Submit</button>
             </form>
