@@ -22,6 +22,8 @@ Route::get('/posts', [PostsController::class, 'posts'])->name('posts');
 
 Route::any('/new_post', [PostsController::class, 'new_post'])->name('post.new')->middleware('auth');
 
+Route::any('/new_category', [PostsController::class, 'new_category'])->name('category.new')->middleware('auth');
+
 Route::get('/post/{post}', [PostsController::class, 'post'])->name('post');
 
 Route::any('/edit_post/{post}', [PostsController::class, 'edit_post'])->name('post.edit')->middleware('auth');

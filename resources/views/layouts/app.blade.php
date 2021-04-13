@@ -43,6 +43,9 @@
                         <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('post.new') }}">New Post</a>
                         </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ route('category.new') }}">New Category</a>
+                        </li>
                         @endif
                     </ul>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
@@ -51,6 +52,7 @@ class PostsController extends Controller
     }
 
     public function new_post(Request $request) {
+        $categories = Category::all();
         if ($request->method()== 'POST') {
             $post = new Post();
             $post->title = $request->get('title');
@@ -71,6 +73,23 @@ class PostsController extends Controller
         if ($request->method()== 'GET') {
             $msg = "";
         }
-        return view('new_post', ['text' => $msg]);
+        return view('new_post', ['text' => $msg, 'categories' => $categories]);
+    }
+
+    public function new_category(Request $request) {
+        if ($request->method()== 'POST') {
+            $category = new Category();
+            $category->title = $request->get('title');
+            if($category->save()) {
+                return redirect('/new_category');
+            } else {
+                $msg = 'Κάτι πήγε στραβά, και κατηγορία δεν καταχωρήθηκε επιτυχώς.';
+            }
+        }
+        if ($request->method()== 'GET') {
+            $categories = Category::all();
+            $msg = "";
+        }
+        return view('new_category', ['text' => $msg, 'categories' => $categories]);
     }
 }
