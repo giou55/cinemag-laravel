@@ -1,0 +1,21 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.links-1 > div {
+    margin: 0 12px;
+}
+
+.links-2 > div {
+    margin: 0 6px;
+    font-size: 0.8rem;
+}
+
+.divider {
+    width: 1px;
+    height: 16px;
+    background-color: #777;
+}
