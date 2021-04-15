@@ -10020,3 +10020,9 @@ h3 {
   height: 16px;
   background-color: #777;
 }
+
+.logo {
+  width: 400px;
+  font-size: 3rem;
+  font-weight: bold;
+}

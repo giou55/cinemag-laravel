@@ -1,6 +1,6 @@
 <div class="container d-flex justify-content-between align-items-center" id="logo">
 <div class="menu-icon">Menu</div>
-<div class="logo">LOGO</div>
+<div class="logo"><img src="{{ asset('images/logo-title.png') }}" alt=""></div>
 <div class="search-icon">
     <form class="d-flex" method="GET" action="{{ route('search') }}">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
