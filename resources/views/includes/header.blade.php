@@ -1,5 +1,5 @@
 <header>
-    <div class="container" id="header">
+    <div class="container d-flex justify-content-between align-items-center" id="header">
         <div class="d-flex justify-content-between align-items-center links-1">
             <div>LIFO</div><div class="divider"></div>
             <div>IN.GR</div><div class="divider"></div>

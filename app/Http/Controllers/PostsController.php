@@ -17,6 +17,12 @@ class PostsController extends Controller
        return view('post', ['post' => $post]);
     }
 
+    public function postsByCategory($category) {
+
+        $posts = Post::where('category_id', $category)->get();
+        return view('posts', ['posts' => $posts]);
+    }
+
     public function posts() {
         $posts = Post::all();
         return view('posts', ['posts' => $posts]);
@@ -25,8 +31,8 @@ class PostsController extends Controller
     public function edit_post(Post $post, Request $request) {
         if ($request->method()== 'POST') {
             $post->title = $request->get('title');
-            $post->category = $request->get('category');
             $post->body = $request->get('body');
+            $post->category_url = $request->get('category');
             if($post->save()) {
                 return redirect('posts');
             } else {
@@ -56,8 +62,8 @@ class PostsController extends Controller
         if ($request->method()== 'POST') {
             $post = new Post();
             $post->title = $request->get('title');
-            $post->category = $request->get('category');
             $post->body = $request->get('body');
+            $post->category_id = $request->get('category');
             $post->user_id = Auth::user()->id;
             if ($request->hasFile('photo')) {
                 $newfilename = time().$request->file('photo')->getClientOriginalName();
@@ -80,6 +86,7 @@ class PostsController extends Controller
         if ($request->method()== 'POST') {
             $category = new Category();
             $category->title = $request->get('title');
+            $category->url = $request->get('url');
             if($category->save()) {
                 return redirect('/new_category');
             } else {

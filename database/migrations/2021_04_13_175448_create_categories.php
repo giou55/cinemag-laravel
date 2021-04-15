@@ -17,6 +17,7 @@ class CreateCategories extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title', 255);
+            $table->string('url', 255);
         });
     }
 

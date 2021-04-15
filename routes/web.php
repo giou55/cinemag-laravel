@@ -20,6 +20,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/posts', [PostsController::class, 'posts'])->name('posts');
 
+Route::get('/posts/{category}', [PostsController::class, 'postsByCategory'])->name('posts.category');
+
 Route::any('/new_post', [PostsController::class, 'new_post'])->name('post.new')->middleware('auth');
 
 Route::any('/new_category', [PostsController::class, 'new_category'])->name('category.new')->middleware('auth');

@@ -8,6 +8,9 @@
                 <div class="mb-3">
                     <input class="form-control" type="text" name="title" placeholder="Category here...">
                 </div>
+                 <div class="mb-3">
+                    <input class="form-control" type="text" name="url" placeholder="URL here...">
+                </div>
                 <button class="btn btn-primary mb-3" type="submit">Υποβολή</button>
             </form>
             <h2>{{ $text }}</h2>
