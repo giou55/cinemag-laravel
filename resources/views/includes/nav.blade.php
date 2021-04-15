@@ -9,25 +9,28 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('posts.category', '2') }}"><h3>ΣΙΝΕΜΑ</h3></a>
+                <a class="nav-link active" aria-current="page" href="/cinema"><h3>ΣΙΝΕΜΑ</h3></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('posts.category', 'theater') }}"><h3>ΘΕΑΤΡΟ</h3></a>
+                <a class="nav-link active" aria-current="page" href="/theater"><h3>ΘΕΑΤΡΟ</h3></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('posts.category', '1') }}"><h3>ΜΟΥΣΙΚΗ</h3></a>
+                <a class="nav-link active" aria-current="page" href="/music"><h3>ΜΟΥΣΙΚΗ</h3></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('posts') }}"><h3>YOUTUBE</h3></a>
+                <a class="nav-link active" aria-current="page" href="/youtube"><h3>YOUTUBE</h3></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('posts') }}"><h3>ΒΙΒΛΙΑ</h3></a>
+                <a class="nav-link active" aria-current="page" href="/books"><h3>ΒΙΒΛΙΑ</h3></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('posts') }}"><h3>PODCASTS</h3></a>
+                <a class="nav-link active" aria-current="page" href="/podcasts"><h3>PODCASTS</h3></a>
                 </li>
 
                 @if (Auth::check())
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ route('posts') }}">My Posts</a>
+                </li>
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{ route('post.new') }}">New Post</a>
                 </li>

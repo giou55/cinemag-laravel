@@ -18,23 +18,32 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/posts', [PostsController::class, 'posts'])->name('posts');
 
-Route::get('/posts/{category}', [PostsController::class, 'postsByCategory'])->name('posts.category');
+Route::get('/cinema', [PostsController::class, 'cinema']);
+Route::get('/theater', [PostsController::class, 'theater']);
+Route::get('/music', [PostsController::class, 'music']);
+Route::get('/youtube', [PostsController::class, 'youtube']);
+Route::get('/books', [PostsController::class, 'books']);
+Route::get('/podcasts', [PostsController::class, 'podcasts']);
+
+Route::get('/post/{post}', [PostsController::class, 'post'])->name('post');
+
+Route::any('/search', [PostsController::class, 'search'])->name('search');   
+
+
+Route::any('/posts', [PostsController::class, 'posts'])->name('posts')->middleware('auth');
 
 Route::any('/new_post', [PostsController::class, 'new_post'])->name('post.new')->middleware('auth');
 
 Route::any('/new_category', [PostsController::class, 'new_category'])->name('category.new')->middleware('auth');
 
-Route::get('/post/{post}', [PostsController::class, 'post'])->name('post');
-
 Route::any('/edit_post/{post}', [PostsController::class, 'edit_post'])->name('post.edit')->middleware('auth');
 
 Route::any('/delete_post/{post}', [PostsController::class, 'delete_post'])->name('post.delete')->middleware('auth');
 
-Route::any('/search', [PostsController::class, 'search'])->name('search');   
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+
 

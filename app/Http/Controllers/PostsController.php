@@ -17,10 +17,40 @@ class PostsController extends Controller
        return view('post', ['post' => $post]);
     }
 
-    public function postsByCategory($category) {
+    public function cinema() {
+        $cat = Category::where('url', 'cinema')->firstOrFail();
+        $posts = Post::where('category_id', $cat->id)->get();
+        return view('category', ['posts' => $posts]);
+    }
 
-        $posts = Post::where('category_id', $category)->get();
-        return view('posts', ['posts' => $posts]);
+    public function theater() {
+        $cat = Category::where('url', 'theater')->firstOrFail();
+        $posts = Post::where('category_id', $cat->id)->get();
+        return view('category', ['posts' => $posts]);
+    }
+
+    public function music() {
+        $cat = Category::where('url', 'music')->firstOrFail();
+        $posts = Post::where('category_id', $cat->id)->get();
+        return view('category', ['posts' => $posts]);
+    }
+
+    public function youtube() {
+        $cat = Category::where('url', 'youtube')->firstOrFail();
+        $posts = Post::where('category_id', $cat->id)->get();
+        return view('category', ['posts' => $posts]);
+    }
+
+    public function books() {
+        $cat = Category::where('url', 'books')->firstOrFail();
+        $posts = Post::where('category_id', $cat->id)->get();
+        return view('category', ['posts' => $posts]);
+    }
+
+    public function podcasts() {
+        $cat = Category::where('url', 'podcasts')->firstOrFail();
+        $posts = Post::where('category_id', $cat->id)->get();
+        return view('category', ['posts' => $posts]);
     }
 
     public function posts() {
@@ -29,10 +59,11 @@ class PostsController extends Controller
     }
 
     public function edit_post(Post $post, Request $request) {
+        $categories = Category::all();
         if ($request->method()== 'POST') {
             $post->title = $request->get('title');
             $post->body = $request->get('body');
-            $post->category_url = $request->get('category');
+            $post->category_id = $request->get('category');
             if($post->save()) {
                 return redirect('posts');
             } else {
@@ -42,7 +73,7 @@ class PostsController extends Controller
         if ($request->method()== 'GET') {
             $msg = "";
         }
-        return view('edit_post', ['post' => $post]);
+        return view('edit_post', ['text' => $msg, 'post' => $post, 'categories' => $categories]);
     }
 
     public function delete_post(Post $post) {
