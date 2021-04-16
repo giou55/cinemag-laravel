@@ -10021,8 +10021,50 @@ h3 {
   background-color: #777;
 }
 
+.menu {
+  width: 50px;
+  height: 50px;
+}
+
+.menu img {
+  width: 100%;
+  height: auto;
+}
+
 .logo {
-  width: 400px;
-  font-size: 3rem;
-  font-weight: bold;
+  width: 520px;
+  height: 180px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: -18px;
+}
+
+.search {
+  width: 50px;
+  height: 50px;
+}
+
+.search img {
+  width: 80%;
+  height: auto;
+}
+
+.links {
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+.separator {
+  height: 1px;
+  width: 40px;
+  margin: 4px auto;
+  background-color: #00bff3;
 }
