@@ -1,46 +1,32 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="bg-white">
     <div class="container">
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/cinema"><h3>ΣΙΝΕΜΑ</h3></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/theater"><h3>ΘΕΑΤΡΟ</h3></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/music"><h3>ΜΟΥΣΙΚΗ</h3></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/youtube"><h3>YOUTUBE</h3></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/books"><h3>ΒΙΒΛΙΑ</h3></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/podcasts"><h3>PODCASTS</h3></a>
-                </li>
+        <div  class="d-flex justify-content-center align-items-center" id="navbar1">
+                <a href="/cinema">
+                   ΣΙΝΕΜΑ</a>
+                <div class="nav-divider"></div>
+                <a href="/theater">
+                    ΘΕΑΤΡΟ</a>
+                <div class="nav-divider"></div>
+                <a href="/music">
+                    ΜΟΥΣΙΚΗ</a>
+                <div class="nav-divider"></div>
+                <a href="/youtube">
+                    YOUTUBE</a>
+                <div class="nav-divider"></div>
+                <a href="/books">
+                    ΒΙΒΛΙΑ</a>
+                <div class="nav-divider"></div>
+                <a href="/podcasts">
+                    PODCASTS</a>
 
                 @if (Auth::check())
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('posts') }}">My Posts</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('post.new') }}">New Post</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('category.new') }}">New Category</a>
-                </li>
+                <a href="{{ route('posts') }}">My Posts</a>
+                <a href="{{ route('post.new') }}">New Post</a>
+                <a href="{{ route('category.new') }}">New Category</a>
                 @endif
-            </ul>
 
-            <!-- Right Side Of Navbar -->
+            {{-- <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
@@ -74,7 +60,7 @@
                         </div>
                     </li>
                 @endguest
-            </ul>
+            </ul> --}}
         </div>
     </div>
 </nav>

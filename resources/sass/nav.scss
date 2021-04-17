@@ -1,0 +1,23 @@
+#navbar1 {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+#navbar1 a {
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 0.4rem;
+}
+
+#navbar1 a:hover {
+    text-decoration: none;
+    color: #1ebaed;
+}
+
+.nav-divider {
+    width: 1px;
+    height: 22px;
+    margin: 0 6px;
+    background-color: #777;
+}

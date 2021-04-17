@@ -1,6 +1,9 @@
-<div class="container d-flex justify-content-between align-items-center" id="logo">
-    <div class="menu">
+<div class="container d-flex justify-content-between align-items-center">
+
+    <div id="menu">
+        <img class="active" src="{{ asset('images/menu-icon-active.jpg') }}" alt="">
         <img src="{{ asset('images/menu-icon-inactive.jpg') }}" alt="">
+        
     </div>
 
     <div class="links">
@@ -11,7 +14,7 @@
         <div>Απόψεις</div>
     </div>
 
-    <div class="logo">
+    <div id="logo">
         <img src="{{ asset('images/logo-title.png') }}" alt="">
         <div class="caption">
             <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 739.2 115.8" xml:space="preserve">
@@ -27,11 +30,13 @@
         <div>Πρόσωπα</div>
     </div>
 
-    <div class="search">
+    <div id="search">
+        <img class="active" src="{{ asset('images/search-icon-active.jpg') }}" alt="">
         <img src="{{ asset('images/search-icon-inactive.jpg') }}" alt="">
         {{-- <form class="d-flex" method="GET" action="{{ route('search') }}">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form> --}}
     </div>
+    
 </div>
