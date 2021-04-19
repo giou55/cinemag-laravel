@@ -1,0 +1,12 @@
+#feed {
+    margin-top: -85px;
+}
+
+.arrow-svg {
+    width: 70%;
+    cursor: pointer;
+}
+
+.arrow-svg:hover .desktop-feed-arrow-main-fill {
+    /* display: none; */
+}
