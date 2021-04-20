@@ -10068,6 +10068,7 @@ h3 {
 #logo img {
   width: 100%;
   height: auto;
+  cursor: pointer;
 }
 
 .caption {
@@ -10138,4 +10139,61 @@ h3 {
 .arrow-svg {
   width: 70%;
   cursor: pointer;
+}
+
+.blog {
+  line-height: 1.2;
+}
+
+.blog-caption {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.caption-divider {
+  height: 10px;
+  width: 1px;
+  display: inline-block;
+  background-color: #ccc;
+  margin: 0 4px;
+}
+
+.blog-caption span {
+  color: #00bff3;
+}
+
+.blog-body {
+  margin-top: 8px;
+}
+
+.blog-body a {
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.blog-divider {
+  height: 1px;
+  width: 100%;
+  background-color: #ccc;
+  margin: 15px auto;
+}
+
+.featured img {
+  width: 100%;
+}
+
+.featured h2 {
+  margin-top: 15px;
+}
+
+.featured a {
+  color: #000;
+}
+
+.featured a:hover span {
+  display: inline-block;
+  height: 1.8rem;
+  border-bottom: 2px solid #00bff3;
 }

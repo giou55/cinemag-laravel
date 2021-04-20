@@ -28,13 +28,44 @@
                     <path class="desktop-feed-arrow-text-fill" d="M143.1 165.6h-12.9c-1.7 0-3.1 1.3-3.1 3v31.3c0 1.7 1.5 3.1 3.1 3.1h9.3c1.7 0 3 1.3 3 3v6.1c0 1.7-1.3 3.1-3 3.1h-9.3c-1.7 0-3.1 1.5-3.1 3.1v49.8c0 1.7-1.3 3.1-3 3.1h-6.8c-1.7 0-3.1-1.5-3.1-3.1V156.4c0-1.7 1.5-3.1 3.1-3.1h25.8c1.7 0 3.1 1.5 3.1 3.1v6.1c.1 1.7-1.4 3.1-3.1 3.1zM184.6 271.3h-25.8c-1.7 0-3-1.5-3-3.1v-112c0-1.7 1.3-3 3-3h25.3c1.7 0 3 1.3 3 3v6.1c0 1.7-1.3 3.1-3 3.1h-12.4c-1.7 0-3 1.5-3 3.1v31.3c0 1.7 1.3 3.1 3 3.1h8.6c1.7 0 3.1 1.5 3.1 3.1v6.1c0 1.7-1.5 3-3.1 3h-8.6c-1.7 0-3 1.5-3 3.1V256c0 1.7 1.3 3 3 3h12.9c1.7 0 3.1 1.5 3.1 3.1v6.1c.1 1.7-1.4 3.1-3.1 3.1zM227.3 271.3h-25.8c-1.7 0-3-1.5-3-3.1v-112c0-1.7 1.3-3 3-3h25.3c1.7 0 3 1.3 3 3v6.1c0 1.7-1.3 3.1-3 3.1h-12.4c-1.7 0-3 1.5-3 3.1v31.3c0 1.7 1.3 3.1 3 3.1h8.6c1.7 0 3.1 1.5 3.1 3.1v6.1c0 1.7-1.5 3-3.1 3h-8.6c-1.7 0-3 1.5-3 3.1V256c0 1.7 1.3 3 3 3h12.9c1.7 0 3.1 1.5 3.1 3.1v6.1c.1 1.7-1.4 3.1-3.1 3.1zM259.7 271.3h-15.4c-1.8 0-3.1-1.3-3.1-3.1v-112c0-1.8 1.3-3 3.1-3h15.4c10.4 0 18.4 7.9 18.4 18.4v81.2c0 10.4-8 18.5-18.4 18.5zm5.5-99.7c0-3.1-1.8-6.1-5.5-6.1h-2.5c-1.8 0-3.1 1.3-3.1 3.1V256c0 1.8 1.3 3.1 3.1 3.1h2.5c3.6 0 5.5-3.1 5.5-6.3v-81.2zM178.4 107.2h-3.1c-.7 0-1.2.6-1.2 1.2v27c0 .7-.6 1.2-1.2 1.2h-2.7c-.7 0-1.2-.6-1.2-1.2v-27c0-.7-.6-1.2-1.2-1.2h-3.1c-.7 0-1.2-.5-1.2-1.2v-2.2c0-.7.5-1.2 1.2-1.2h13.7c.7 0 1.2.5 1.2 1.2v2.2c0 .7-.5 1.2-1.2 1.2zM201.2 136.7h-2.7c-.7 0-1.2-.6-1.2-1.2v-12.6c0-.7-.6-1.2-1.2-1.2h-3.2c-.7 0-1.2.5-1.2 1.2v12.6c0 .7-.6 1.2-1.2 1.2h-2.7c-.7 0-1.2-.6-1.2-1.2v-31.6c0-.7.6-1.2 1.2-1.2h2.7c.7 0 1.2.5 1.2 1.2v11.9c0 .7.5 1.2 1.2 1.2h3.2c.7 0 1.2-.6 1.2-1.2v-11.9c0-.7.5-1.2 1.2-1.2h2.7c.7 0 1.2.5 1.2 1.2v31.6c.1.6-.5 1.2-1.2 1.2zM224.1 136.7h-11.4c-.7 0-1.2-.6-1.2-1.2v-31.6c0-.7.5-1.2 1.2-1.2h11.1c.7 0 1.2.5 1.2 1.2v2.2c0 .7-.5 1.2-1.2 1.2h-5.9c-.7 0-1.2.6-1.2 1.2v6.6c0 .7.5 1.2 1.2 1.2h4.1c.7 0 1.2.6 1.2 1.2v2.1c0 .7-.5 1.2-1.2 1.2h-4.1c-.7 0-1.2.6-1.2 1.2v8.7c0 .7.5 1.2 1.2 1.2h6.2c.7 0 1.2.6 1.2 1.2v2.1c.1.9-.5 1.5-1.2 1.5z"></path>
                 </svg>
             </div>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos optio, hic laborum, 
-            pariatur adipisci illo voluptas unde numquam id dolor, 
-            veniam dolorum excepturi assumenda eos perferendis iure distinctio quidem officiis?
+            <h2>Blog</h2>
+            <div class="d-flex flex-column">
+                @foreach ($posts as $post)
+                    <div class="blog">
+                        @if ($post->image)
+                        <img src="/storage/post_images/{{ $post->image }}" alt="">
+                        @endif
+                        <div class="blog-caption">
+                            {{ $post->title }} 
+                            <div class="caption-divider"></div>
+                            <span>{{ $post->created_at }}</span>
+                        </div>
+                        <div class="blog-body">
+                            <a href="{{ route('post', $post) }}">{{ $post->body }}</a>
+                        </div>
+                        <div class="blog-divider">
+
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
-        <div class="col-md-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt repellendus beatae praesentium. 
-            Eligendi ipsa officiis quidem, autem odio, qui, soluta tenetur aliquam reprehenderit temporibus aperiam blanditiis 
-            iste enim voluptates repellat?
+        <div class="col-md-6">
+            @foreach ($featured as $f)
+                <div class="featured">
+                    @if ($f->image)
+                    <img src="/storage/post_images/{{ $f->image }}" alt="">
+                    @endif
+                    <h2>
+                        <a href="{{ route('post', $post) }}">
+                            <span>{{ $f->title }}</span>
+                        </a>
+                    </h2>
+                    <div>
+                        {{ $f->body }}
+                    </div>
+                </div>
+            @endforeach
         </div>
         <div class="col-md-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi mollitia, ipsam eligendi magni 
             possimus cumque accusamus eveniet veniam voluptate facilis sequi natus? Iste quod quo unde corrupti perferendis 
