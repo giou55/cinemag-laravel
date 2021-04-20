@@ -20,11 +20,13 @@ class HomeController extends Controller
     }
 
    public function index() {
-        $cat = Category::where('url', 'blog')->firstOrFail();
-        $posts = Post::where('category_id', $cat->id)->get();
-        $feat = Category::where('url', 'featured')->firstOrFail();
-        $featured = Post::where('category_id', $feat->id)->get();
-        return view('home', ['posts' => $posts, 'featured' => $featured]);
+        $blog = Category::where('url', 'blog')->firstOrFail();
+        $blog_posts = Post::where('category_id', $blog->id)->get();
+        $featured = Category::where('url', 'featured')->firstOrFail();
+        $feat_posts = Post::where('category_id', $featured->id)->get();
+        $first = Category::where('url', 'first')->firstOrFail();
+        $first_post = Post::where('category_id', $first->id)->get();
+        return view('home', ['posts' => $blog_posts, 'featured' => $feat_posts, 'first' => $first_post]);
     }
 
     /**

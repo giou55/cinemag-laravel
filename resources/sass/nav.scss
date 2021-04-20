@@ -1,6 +1,7 @@
 #navbar1 {
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
+    position: relative;
 }
 
 #navbar1 a {
@@ -20,4 +21,13 @@
     height: 22px;
     margin: 0 6px;
     background-color: #777;
+}
+
+.arrow-svg {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 20px;
+    top: -11px;
+    cursor: pointer;
 }

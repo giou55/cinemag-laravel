@@ -21,6 +21,10 @@
 </head>
 <body>
     <div id="app">
+        @if (Auth::check())
+            @include('includes.admin')
+        @endif
+
         @include('includes.header')
 
         @include('includes.logo')

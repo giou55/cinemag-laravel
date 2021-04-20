@@ -1,10 +1,6 @@
 #feed {
-    margin-top: -85px;
-}
-
-.arrow-svg {
-    width: 60%;
-    cursor: pointer;
+    margin-top: 80px;
+    padding-right: 30px;
 }
 
 .blog {
@@ -46,20 +42,35 @@
     margin: 15px auto;
 }
 
-.featured img {
+.first img {
     width: 100%;
 }
 
-.featured h2 {
+.first h2 {
     margin-top: 15px;
 }
 
-.featured a {
+.first a {
     color: #000;
 }
 
-.featured a:hover span {
+.first a:hover span {
     display: inline-block;
     height: 1.8rem;
     border-bottom: 2px solid #00bff3;
+}
+
+.featured {
+    margin-top: 35px;
+    padding-top: 35px;
+    border-top: 4px double #222;
+}
+
+.svg-container {
+    width: 30%;
+    margin: 0 auto 20px auto;
+}
+
+.featured img {
+    width: 100%;
 }

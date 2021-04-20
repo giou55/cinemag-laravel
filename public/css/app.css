@@ -10062,7 +10062,9 @@ h3 {
 
 #logo {
   width: 520px;
-  height: 180px;
+  height: 160px;
+  margin-top: 20px;
+  z-index: 100;
 }
 
 #logo img {
@@ -10111,6 +10113,7 @@ h3 {
 #navbar1 {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
+  position: relative;
 }
 
 #navbar1 a {
@@ -10132,13 +10135,18 @@ h3 {
   background-color: #777;
 }
 
-#feed {
-  margin-top: -85px;
+.arrow-svg {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 20px;
+  top: -11px;
+  cursor: pointer;
 }
 
-.arrow-svg {
-  width: 60%;
-  cursor: pointer;
+#feed {
+  margin-top: 80px;
+  padding-right: 30px;
 }
 
 .blog {
@@ -10180,20 +10188,52 @@ h3 {
   margin: 15px auto;
 }
 
+.first img {
+  width: 100%;
+}
+
+.first h2 {
+  margin-top: 15px;
+}
+
+.first a {
+  color: #000;
+}
+
+.first a:hover span {
+  display: inline-block;
+  height: 1.8rem;
+  border-bottom: 2px solid #00bff3;
+}
+
+.featured {
+  margin-top: 35px;
+  padding-top: 35px;
+  border-top: 4px double #222;
+}
+
+.svg-container {
+  width: 30%;
+  margin: 0 auto 20px auto;
+}
+
 .featured img {
   width: 100%;
 }
 
-.featured h2 {
-  margin-top: 15px;
+#admin {
+  background-color: #333;
+  padding: 8px 90px;
 }
 
-.featured a {
-  color: #000;
+#admin span {
+  color: #eee;
+  margin-right: 50px;
+  font-size: 1.2rem;
 }
 
-.featured a:hover span {
-  display: inline-block;
-  height: 1.8rem;
-  border-bottom: 2px solid #00bff3;
+#admin a {
+  color: #eee;
+  margin-right: 25px;
+  font-size: 1rem;
 }
