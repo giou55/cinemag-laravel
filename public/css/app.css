@@ -10276,3 +10276,24 @@ h3 {
   height: auto;
   cursor: pointer;
 }
+
+.logo-category {
+  border-bottom: 4px double #222;
+}
+
+.category-title-container {
+  right: 0;
+  left: 0;
+  position: absolute;
+  top: -48px;
+  text-align: center;
+}
+
+.category-title {
+  background-color: #fff;
+  display: inline-block;
+  padding: 6px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 2px solid #333;
+}

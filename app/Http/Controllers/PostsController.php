@@ -15,37 +15,37 @@ class PostsController extends Controller
     public function cinema() {
         $cat = Category::where('url', 'cinema')->firstOrFail();
         $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts]);
+        return view('category', ['posts' => $posts, 'title' => 'ΣΙΝΕΜΑ']);
     }
 
     public function theater() {
         $cat = Category::where('url', 'theater')->firstOrFail();
         $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts]);
+        return view('category', ['posts' => $posts, 'title' => 'ΘΕΑΤΡΟ']);
     }
 
     public function music() {
         $cat = Category::where('url', 'music')->firstOrFail();
         $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts]);
+        return view('category', ['posts' => $posts, 'title' => 'ΜΟΥΣΙΚΗ']);
     }
 
     public function youtube() {
         $cat = Category::where('url', 'youtube')->firstOrFail();
         $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts]);
+        return view('category', ['posts' => $posts, 'title' => 'YOUTUBE']);
     }
 
     public function books() {
         $cat = Category::where('url', 'books')->firstOrFail();
         $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts]);
+        return view('category', ['posts' => $posts, 'title' => 'ΒΙΒΛΙΑ']);
     }
 
     public function podcasts() {
         $cat = Category::where('url', 'podcasts')->firstOrFail();
         $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts]);
+        return view('category', ['posts' => $posts, 'title' => 'PODCASTS']);
     }
 
     public function search(Request $request) {
