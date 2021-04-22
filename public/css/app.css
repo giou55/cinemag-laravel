@@ -10206,6 +10206,32 @@ h3 {
   border-bottom: 2px solid #00bff3;
 }
 
+.right img {
+  width: 100%;
+}
+
+.right h4 {
+  margin: 0;
+}
+
+.right a {
+  color: #000;
+}
+
+.right a:hover span {
+  display: inline-block;
+  height: 1.3rem;
+  border-bottom: 2px solid #00bff3;
+}
+
+.wave-hr {
+  text-align: center;
+}
+
+.wave-hr img {
+  width: 50%;
+}
+
 .featured {
   margin-top: 35px;
   padding-top: 35px;
@@ -10241,7 +10267,7 @@ h3 {
 
 #admin-logo {
   width: 520px;
-  height: 160px;
+  height: 130px;
   margin-top: 20px;
 }
 
