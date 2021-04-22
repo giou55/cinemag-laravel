@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
         <div class="container-sm">
@@ -18,6 +18,13 @@
                 <div class="mb-3">
                     <textarea class="form-control" name="body" rows="10" cols="30">{{ $post->body }}
                     </textarea>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-md-4">
+                        @if ($post->image)
+                            <img src="/storage/post_images/{{ $post->image }}" class="card-img-top" alt="">
+                        @endif
+                    </div>
                 </div>
                 <button class="btn btn-primary mb-3" type="submit">Submit</button>
             </form>

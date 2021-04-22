@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
         <div class="container-sm">
@@ -17,7 +17,7 @@
             <h2>Κατηγορίες άρθρων</h2>
             <ul>
                 @foreach ($categories as $category)
-                    <li>{{ $category->title }}</li>
+                    <li>{{ $category->title }} (id: {{ $category->id }})</li>
                 @endforeach
             </ul>
             

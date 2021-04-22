@@ -10224,6 +10224,7 @@ h3 {
 #admin {
   background-color: #333;
   padding: 8px 90px;
+  border-bottom: 4px solid #0981b1;
 }
 
 #admin span {
@@ -10236,4 +10237,16 @@ h3 {
   color: #eee;
   margin-right: 25px;
   font-size: 1rem;
+}
+
+#admin-logo {
+  width: 520px;
+  height: 160px;
+  margin-top: 20px;
+}
+
+#admin-logo img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
 }

@@ -63,9 +63,22 @@
                     </div>
                 @endforeach
             </div>
-            <div class="col-md-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi mollitia, ipsam eligendi magni 
-                possimus cumque accusamus eveniet veniam voluptate facilis sequi natus? Iste quod quo unde corrupti perferendis 
-                laudantium ullam?
+            <div class="col-md-4">
+                @foreach ($right as $r)
+                    <div class="right">
+                        @if ($f->image)
+                        <img src="/storage/post_images/{{ $r->image }}" alt="">
+                        @endif
+                        <h3>
+                            <a href="{{ route('post', $post) }}">
+                                <span>{{ $r->title }}</span>
+                            </a>
+                        </h3>
+                        <div>
+                            {{ $r->body }}
+                        </div>
+                    </div>
+                @endforeach
             </div>
 
              <div class="d-flex flex-wrap featured">
