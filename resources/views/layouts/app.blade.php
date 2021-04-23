@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        @if (Auth::check())
+        @if (Auth::check() && Auth::user()->is_activated)
             @include('includes.admin')
         @endif
 

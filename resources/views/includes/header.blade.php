@@ -27,7 +27,7 @@
                         @endif
 
                     @else
-                        <a>{{ Auth::user()->name }}</a>
+                        <a>{{ Auth::user()->nickname }}</a>
                         <div class="divider"></div>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
@@ -38,8 +38,6 @@
                             @csrf
                         </form>
                     @endguest
-                {{-- <div><strong>Subscribe </strong></div><div class="divider"></div>
-                <div><strong> Sign In</strong></div> --}}
             </div>
         </div>
     </div>

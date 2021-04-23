@@ -15,7 +15,7 @@
                             <a href="{{ route('post', $post) }}">{{ $post->title }}</a>
                             </h5>
                             <p class="card-text">Κατηγορία: {{ $post->category->title }}</p>
-                            <p class="card-text">Συντάκτης: {{ $post->user->name }}</p>
+                            <p class="card-text">Συντάκτης: {{ $post->user->fullname }}</p>
                             <p class="card-text">{{ $post->body }}</p>
                         </div>
                         </div>

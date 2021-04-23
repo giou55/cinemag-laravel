@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -83,5 +84,24 @@ class AdminController extends Controller
             $msg = "";
         }
         return view('new_category', ['text' => $msg, 'categories' => $categories]);
+    }
+
+    public function users(User $user, Request $request) {
+        $users = User::all();
+        // return view('users', ['users' => $users]);
+
+        if ($request->method()== 'POST') {
+            $user = User::where('id', $request->get('user_id'));
+            $user->is_activated = $request->get('status');
+            if($user->save()) {
+                return redirect('/users');
+            } else {
+                $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
+            }
+        }
+        if ($request->method()== 'GET') {
+            $msg = "";
+        }
+        return view('users', ['text' => $msg, 'users' => $users]);
     }
 }

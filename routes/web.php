@@ -27,13 +27,13 @@ Route::get('/books', [PostsController::class, 'books']);
 Route::get('/podcasts', [PostsController::class, 'podcasts']);
 Route::any('/search', [PostsController::class, 'search'])->name('search');   
 
-Route::any('/admin', [PostsController::class, 'posts'])->name('posts')->middleware('auth');
-Route::get('/post/{post}', [AdminController::class, 'post'])->name('post');
-Route::any('/posts', [AdminController::class, 'posts'])->name('posts')->middleware('auth');
-Route::any('/new_post', [AdminController::class, 'new_post'])->name('post.new')->middleware('auth');
-Route::any('/new_category', [AdminController::class, 'new_category'])->name('category.new')->middleware('auth');
-Route::any('/edit_post/{post}', [AdminController::class, 'edit_post'])->name('post.edit')->middleware('auth');
-Route::any('/delete_post/{post}', [AdminController::class, 'delete_post'])->name('post.delete')->middleware('auth');
+Route::get('/post/{post}', [AdminController::class, 'post'])->name('post')->middleware('auth', 'active');
+Route::any('/posts', [AdminController::class, 'posts'])->name('posts')->middleware('auth', 'active');
+Route::any('/new_post', [AdminController::class, 'new_post'])->name('post.new')->middleware('auth', 'active');
+Route::any('/new_category', [AdminController::class, 'new_category'])->name('category.new')->middleware('auth', 'active');
+Route::any('/edit_post/{post}', [AdminController::class, 'edit_post'])->name('post.edit')->middleware('auth', 'active');
+Route::any('/delete_post/{post}', [AdminController::class, 'delete_post'])->name('post.delete')->middleware('auth', 'active');
+Route::any('/users', [AdminController::class, 'users'])->name('users')->middleware('auth', 'active');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

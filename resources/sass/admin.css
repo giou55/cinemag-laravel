@@ -1,6 +1,6 @@
 #admin {
     background-color: #333;
-    padding: 8px 90px;
+    padding: 8px 120px;
     border-bottom: 4px solid #0981b1;
 }
 
@@ -26,4 +26,9 @@
     width: 100%;
     height: auto;
     cursor: pointer;
+}
+
+.admin-users div {
+    display: inline-block;
+    width: 200px;
 }
