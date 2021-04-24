@@ -57,7 +57,7 @@ class AdminController extends Controller
                 $post->image = $newfilename;
             }
             if($post->save()) {
-                return redirect('/posts');
+                return redirect('posts');
             } else {
                 $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
             }
@@ -74,7 +74,7 @@ class AdminController extends Controller
             $category->title = $request->get('title');
             $category->url = $request->get('url');
             if($category->save()) {
-                return redirect('/new_category');
+                return redirect('new_category');
             } else {
                 $msg = 'Κάτι πήγε στραβά, και κατηγορία δεν καταχωρήθηκε επιτυχώς.';
             }
@@ -87,21 +87,28 @@ class AdminController extends Controller
     }
 
     public function users(User $user, Request $request) {
-        $users = User::all();
-        // return view('users', ['users' => $users]);
-
         if ($request->method()== 'POST') {
-            $user = User::where('id', $request->get('user_id'));
-            $user->is_activated = $request->get('status');
+            $user = User::where('id', $request->get('user_id'))->first();
+            if($request->has('status')){
+                //Checkbox checked
+                $user->is_activated = 1;
+            }else {
+                //Checkbox not checked
+                $user->is_activated = 0;
+            }
             if($user->save()) {
-                return redirect('/users');
+                return redirect('users');
             } else {
                 $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
             }
         }
-        if ($request->method()== 'GET') {
-            $msg = "";
-        }
+        $users = User::all();
+        $msg = "";
         return view('users', ['text' => $msg, 'users' => $users]);
+    }
+
+    public function delete_user(User $user) {
+        $user->delete();
+        return redirect('users');
     }
 }

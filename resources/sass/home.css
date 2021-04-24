@@ -46,10 +46,6 @@
     width: 100%;
 }
 
-.first h2 {
-    margin-top: 15px;
-}
-
 .first a {
     color: #000;
 }
@@ -86,10 +82,14 @@
     width: 50%;
 }
 
-.featured {
+.featured-title {
     margin-top: 35px;
     padding-top: 35px;
     border-top: 4px double #222;
+}
+
+.featured-post img {
+    width: 100%;
 }
 
 .svg-container {

@@ -11,7 +11,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="mb-3 card">
                         @if ($post->image)
-                        <img src="/storage/post_images/{{ $post->image }}" class="card-img-top" alt="">
+                            <img src="/storage/post_images/{{ $post->image }}" class="card-img-top" alt="">
                         @endif
                         <div class="card-body">
                             <h5 class="card-title">

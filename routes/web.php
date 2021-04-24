@@ -34,6 +34,7 @@ Route::any('/new_category', [AdminController::class, 'new_category'])->name('cat
 Route::any('/edit_post/{post}', [AdminController::class, 'edit_post'])->name('post.edit')->middleware('auth', 'active');
 Route::any('/delete_post/{post}', [AdminController::class, 'delete_post'])->name('post.delete')->middleware('auth', 'active');
 Route::any('/users', [AdminController::class, 'users'])->name('users')->middleware('auth', 'active');
+Route::any('/delete_user/{user}', [AdminController::class, 'delete_user'])->name('user.delete')->middleware('auth', 'active');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

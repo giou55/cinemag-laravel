@@ -19,8 +19,8 @@ class HomeController extends Controller
    public function index() {
         $blog_posts = Post::where('category_id', 7)->get();
         $feat_posts = Post::where('category_id', 8)->get();
-        $first_post = Post::where('category_id', 9)->get();
-        $right_bar = Post::where('category_id', 10)->get();
+        $first_post = Post::where('category_id', 10)->get();
+        $right_bar = Post::where('category_id', 9)->get();
         return view('home', ['posts' => $blog_posts, 'featured' => $feat_posts, 'first' => $first_post, 'right' => $right_bar]);
     }
 

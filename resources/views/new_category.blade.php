@@ -17,7 +17,7 @@
             <h2>Κατηγορίες άρθρων</h2>
             <ul>
                 @foreach ($categories as $category)
-                    <li>{{ $category->title }} (id: {{ $category->id }})</li>
+                    <li>{{ $category->title }} (id: {{ $category->id }}, url: {{ $category->url }})</li>
                 @endforeach
             </ul>
             
