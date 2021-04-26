@@ -16,7 +16,15 @@ class AdminController extends Controller
 
     public function posts() {
         $posts = Post::all();
-        return view('posts', ['posts' => $posts]);
+        $categories = Category::all();
+        return view('posts', ['posts' => $posts, 'categories' => $categories, 'selectedCat' => '']);
+    }
+
+    public function postsByCategory($category) {
+        $cat = Category::where('url', $category)->firstOrFail();
+        $posts = Post::where('category_id', $cat->id)->get();
+        $categories = Category::all();
+        return view('posts', ['posts' => $posts, 'categories' => $categories, 'selectedCat' => $cat]);
     }
 
     public function edit_post(Post $post, Request $request) {
@@ -68,13 +76,18 @@ class AdminController extends Controller
         return view('new_post', ['text' => $msg, 'categories' => $categories]);
     }
 
+    public function categories() {
+        $categories = Category::all();
+        return view('categories', ['categories' => $categories]);
+    }
+
     public function new_category(Request $request) {
         if ($request->method()== 'POST') {
             $category = new Category();
             $category->title = $request->get('title');
             $category->url = $request->get('url');
             if($category->save()) {
-                return redirect('new_category');
+                return redirect('categories');
             } else {
                 $msg = 'Κάτι πήγε στραβά, και κατηγορία δεν καταχωρήθηκε επιτυχώς.';
             }
@@ -84,6 +97,27 @@ class AdminController extends Controller
             $msg = "";
         }
         return view('new_category', ['text' => $msg, 'categories' => $categories]);
+    }
+
+    public function edit_category(Category $category, Request $request) {
+        if ($request->method()== 'POST') {
+            $category->title = $request->get('title');
+            $category->url = $request->get('url');
+            if($category->save()) {
+                return redirect('categories');
+            } else {
+                $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
+            }
+        }
+        if ($request->method()== 'GET') {
+            $msg = "";
+        }
+        return view('edit_category', ['text' => $msg, 'category' => $category]);
+    }
+
+    public function delete_category(Category $category) {
+        $category->delete();
+        return redirect('categories');
     }
 
     public function users(User $user, Request $request) {

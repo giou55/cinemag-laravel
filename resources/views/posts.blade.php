@@ -1,8 +1,40 @@
 @extends('layouts.admin')
 
 @section('content')
+        <div class="container-sm header-border mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Άρθρα</h2>
+                </div>
+                <div class="col-md-8">
+                    <form action="">
+                        <label for="category"><h4>Κατηγορία:</h4></label>
+                        <select id="" name="category" onchange="top.location.href = this.options[this.selectedIndex].value">
+                            <option value="{{ route('posts.all') }}">Όλες</option>
+                            @if ($selectedCat !== '') 
+                                <option value="" selected>
+                                    {{ $selectedCat->title }}
+                                </option>
+                            @endif
+                            @foreach ($categories as $category)
+                                @if ($selectedCat == '')
+                                    <option value="{{ route('posts.category', $category->url) }}">
+                                        {{ $category->title }}
+                                    </option>
+                                @endif
+                                @if ($selectedCat !== '' && $selectedCat->url !== $category->url)
+                                    <option value="{{ route('posts.category', $category->url) }}">
+                                        {{ $category->title }}
+                                    </option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </form>  
+                </div>
+            </div>
+        </div>
+
         <div class="container-sm">
-            <h2>Τα άρθρα μου</h2>
             {{-- <div class="d-flex flex-row flex-wrap"> --}}
             <div class="card-columns">
                 @foreach ($posts as $post)

@@ -10255,7 +10255,7 @@ h3 {
 
 #admin span {
   color: #eee;
-  margin-right: 50px;
+  margin-right: 80px;
   font-size: 1.2rem;
 }
 
@@ -10275,6 +10275,10 @@ h3 {
   width: 100%;
   height: auto;
   cursor: pointer;
+}
+
+.header-border {
+  border-bottom: 4px double #222;
 }
 
 .admin-users div {

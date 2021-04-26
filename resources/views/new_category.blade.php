@@ -1,8 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-        <div class="container-sm">
+        <div class="container-sm header-border mb-3">
             <h2>Νέα κατηγορία άρθρων</h2>
+        </div>
+
+        <div class="container-sm">
             <form action="" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">

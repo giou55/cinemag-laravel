@@ -2,7 +2,7 @@
 
 @section('content')
         <div class="container-sm">
-            <h2>Edit Post</h2>
+            <h2>Επεξεργασία άρθρου</h2>
             <form action="" method="POST">
                 @csrf
                 <div class="mb-3">
@@ -26,7 +26,7 @@
                         @endif
                     </div>
                 </div>
-                <button class="btn btn-primary mb-3" type="submit">Submit</button>
+                <button class="btn btn-primary mb-3" type="submit">Αποθήκευση</button>
             </form>
         </div>
 @endsection

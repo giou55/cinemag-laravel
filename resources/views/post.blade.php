@@ -11,8 +11,8 @@
                     <p class="card-text">Κατηγορία: {{ $post->category->title }}</p>
                     <p class="card-text">{{ $post->body }}</p>
                     @if (Auth::check() && Auth::user()->id == $post->user->id)
-                    <a href="{{ route('post.edit', $post) }}"><button class="btn btn-primary">Edit Post</button></a>
-                    <a href="{{ route('post.delete', $post) }}"><button class="btn btn-danger">Delete Post</button></a>
+                    <a href="{{ route('post.edit', $post) }}"><button class="btn btn-primary">Επεξεργασία</button></a>
+                    <a href="{{ route('post.delete', $post) }}"><button class="btn btn-danger">Διαγραφή</button></a>
                     @endif
                 </div>
             </div>

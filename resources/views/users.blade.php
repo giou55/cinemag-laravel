@@ -1,8 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
+        <div class="container-sm header-border mb-3">
+            <h2>Χρήστες</h2>
+        </div>
+
         <div class="container-sm" class="admin-users">
-            <h2 class="mb-5">Χρήστες</h2>
             <div class="row mb-2">
                 <div class="col-xs-12 col-sm-6 col-md-1 col-lg-1">
                     <h4>ID</h4>
