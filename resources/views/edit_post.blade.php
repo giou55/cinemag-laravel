@@ -6,16 +6,21 @@
             <form action="" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <input class="form-control" type="text" name="title" placeholder="Title here..." value="{{ $post->title }}">
+                    <label for="title">Τίτλος</label>
+                    <input class="form-control" type="text" name="title" value="{{ $post->title }}">
                 </div>
                 <div class="mb-3">
+                    <label for="category">Κατηγορία</label>
                     <select class="form-control" name="category">
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->title}}</option>
+                            <option value="{{ $category->id }}" {{ ($post->category_id == $category->id) ? ' selected' : '' }}>
+                                {{ $category->title}}
+                            </option>
                         @endforeach
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="body">Κείμενο</label>
                     <textarea class="form-control" name="body" rows="10" cols="30">{{ $post->body }}
                     </textarea>
                 </div>

@@ -101,6 +101,7 @@ class AdminController extends Controller
 
     public function edit_category(Category $category, Request $request) {
         if ($request->method()== 'POST') {
+            $category->id = $request->get('id');
             $category->title = $request->get('title');
             $category->url = $request->get('url');
             if($category->save()) {
@@ -116,6 +117,7 @@ class AdminController extends Controller
     }
 
     public function delete_category(Category $category) {
+        Post::where('category_id', $category->id)->update(['category_id' => 11]);
         $category->delete();
         return redirect('categories');
     }
@@ -142,6 +144,7 @@ class AdminController extends Controller
     }
 
     public function delete_user(User $user) {
+        Post::where('user_id', $user->id)->update(['user_id' => 1]);
         $user->delete();
         return redirect('users');
     }

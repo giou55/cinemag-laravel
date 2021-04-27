@@ -6,6 +6,10 @@
             <form action="" method="POST">
                 @csrf
                 <div class="mb-3">
+                    <label for="id">ID</label>
+                    <input class="form-control" type="text" name="id" value="{{ $category->id }}">
+                </div>
+                <div class="mb-3">
                     <label for="title">Όνομα</label>
                     <input class="form-control" type="text" name="title" value="{{ $category->title }}">
                 </div>
