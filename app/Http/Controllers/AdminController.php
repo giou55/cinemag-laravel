@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -33,7 +34,18 @@ class AdminController extends Controller
             $post->title = $request->get('title');
             $post->body = $request->get('body');
             $post->category_id = $request->get('category');
-            if($post->save()) {
+
+            if ($request->hasFile('photo')) {
+                if (isset($post->image)) {
+                    $image_path = public_path('storage/post_images/' . $post->image);
+                    unlink($image_path);
+                }
+                $newfilename = time().$request->file('photo')->getClientOriginalName();
+                $request->file('photo')->storeAs('public/post_images', $newfilename);
+                $post->image = $newfilename;
+            }
+
+            if ($post->save()) {
                 return redirect('posts');
             } else {
                 $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
@@ -43,12 +55,6 @@ class AdminController extends Controller
             $msg = "";
         }
         return view('edit_post', ['text' => $msg, 'post' => $post, 'categories' => $categories]);
-    }
-
-    public function delete_post(Post $post) {
-        if (Auth::user()->id != $post->user->id) return redirect('posts');
-        $post->delete();
-        return redirect('posts');
     }
 
     public function new_post(Request $request) {
@@ -64,7 +70,7 @@ class AdminController extends Controller
                 $request->file('photo')->storeAs('public/post_images', $newfilename);
                 $post->image = $newfilename;
             }
-            if($post->save()) {
+            if ($post->save()) {
                 return redirect('posts');
             } else {
                 $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
@@ -74,6 +80,16 @@ class AdminController extends Controller
             $msg = "";
         }
         return view('new_post', ['text' => $msg, 'categories' => $categories]);
+    }
+
+    public function delete_post(Post $post) {
+        if (Auth::user()->id != $post->user->id) return redirect('posts');
+        if (isset($post->image)) {
+            $image_path = public_path('storage/post_images/' . $post->image);
+            unlink($image_path);
+        }
+        $post->delete();
+        return redirect('posts');
     }
 
     public function categories() {
@@ -86,7 +102,7 @@ class AdminController extends Controller
             $category = new Category();
             $category->title = $request->get('title');
             $category->url = $request->get('url');
-            if($category->save()) {
+            if ($category->save()) {
                 return redirect('categories');
             } else {
                 $msg = 'Κάτι πήγε στραβά, και κατηγορία δεν καταχωρήθηκε επιτυχώς.';
@@ -104,7 +120,7 @@ class AdminController extends Controller
             $category->id = $request->get('id');
             $category->title = $request->get('title');
             $category->url = $request->get('url');
-            if($category->save()) {
+            if ($category->save()) {
                 return redirect('categories');
             } else {
                 $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
@@ -125,14 +141,14 @@ class AdminController extends Controller
     public function users(User $user, Request $request) {
         if ($request->method()== 'POST') {
             $user = User::where('id', $request->get('user_id'))->first();
-            if($request->has('status')){
+            if ($request->has('status')){
                 //Checkbox checked
                 $user->is_activated = 1;
-            }else {
+            } else {
                 //Checkbox not checked
                 $user->is_activated = 0;
             }
-            if($user->save()) {
+            if ($user->save()) {
                 return redirect('users');
             } else {
                 $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';

@@ -3,7 +3,7 @@
 @section('content')
         <div class="container-sm">
             <h2>Επεξεργασία άρθρου</h2>
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="title">Τίτλος</label>
@@ -24,12 +24,15 @@
                     <textarea class="form-control" name="body" rows="10" cols="30">{{ $post->body }}
                     </textarea>
                 </div>
-                <div class="mb-3 row">
+                <div class="mb-3">
                     <div class="col-md-4">
                         @if ($post->image)
                             <img src="/storage/post_images/{{ $post->image }}" class="card-img-top" alt="">
                         @endif
                     </div>
+                </div>
+                <div class="mb-3">
+                     <input class="form-control" type="file" name="photo">
                 </div>
                 <button class="btn btn-primary mb-3" type="submit">Αποθήκευση</button>
             </form>
