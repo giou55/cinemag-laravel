@@ -25,7 +25,7 @@
                 @foreach ($posts as $post)
                     <div class="blog">
                         @if ($post->image)
-                            <img src="/storage/post_images/{{ $post->image }}" alt="">
+                            <img src="/storage/post_images/{{ $post->image }}" class="rounded-circle" alt="">
                         @endif
                         <div class="blog-caption">
                             {{ $post->title }} 

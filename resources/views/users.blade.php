@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-        <div class="container-sm header-border mb-3">
+        {{-- <div class="container-sm header-border mb-3">
             <h2>Χρήστες</h2>
         </div>
 
@@ -31,50 +31,116 @@
             </div>
             
             @foreach ($users as $user)
-            <div class="row" style="height: 35px">
-                <div class="col-xs-12 col-sm-6 col-md-1 col-lg-1">
-                    {{ $user->id }}
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
-                    {{ $user->fullname }}
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
-                    {{ $user->nickname }}
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
-                    {{ $user->email }}
-                </div>
-                @if (Auth::user()->email == "aaa@gmail.com")
+                <div class="row" style="height: 35px">
+                    <div class="col-xs-12 col-sm-6 col-md-1 col-lg-1">
+                        {{ $user->id }}
+                    </div>
                     <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
-                        @if ($user->email !== "aaa@gmail.com")
-                            <form action="" method="POST" id="myForm{{ $user->id }}">
-                                @csrf
-                                <label class="switch">
-                                    <input class="status" type="checkbox" name="status" {{ ($user->is_activated) ? ' checked' : '' }}>
-                                    <span class="slider round"></span>
-                                </label>
-                                <input type="hidden" name="user_id" value="{{ $user->id }}">
-                            </form>
-                        @endif
-                        @if ($user->email == "aaa@gmail.com") ΕΝΕΡΓΟΣ
-                        @endif
+                        {{ $user->fullname }}
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-1 col-lg-1">
-                        @if ($user->email !== "aaa@gmail.com")
-                            <button class="btn btn-primary btn-sm" type="submit" form="myForm{{ $user->id }}">Αποθήκευση</button>
-                        @endif
+                    <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                        {{ $user->nickname }}
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-1 col-lg-1">
-                        @if ($user->email !== "aaa@gmail.com")
-                            <a href="{{ route('user.delete', $user) }}"><button class="btn btn-danger btn-sm">Διαγραφή</button></a>
-                        @endif
+                    <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                        {{ $user->email }}
                     </div>
-                @endif    
-            </div>
-            
+                    @if (Auth::user()->email == "aaa@gmail.com")
+                        <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                            @if ($user->email !== "aaa@gmail.com")
+                                <form action="" method="POST" id="myForm{{ $user->id }}">
+                                    @csrf
+                                    <label class="switch">
+                                        <input class="status" type="checkbox" name="status" {{ ($user->is_activated) ? ' checked' : '' }}>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                </form>
+                            @endif
+                            @if ($user->email == "aaa@gmail.com") ΕΝΕΡΓΟΣ
+                            @endif
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-1 col-lg-1">
+                            @if ($user->email !== "aaa@gmail.com")
+                                <button class="btn btn-primary btn-sm" type="submit" form="myForm{{ $user->id }}">Αποθήκευση</button>
+                            @endif
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-1 col-lg-1">
+                            @if ($user->email !== "aaa@gmail.com")
+                                <a href="{{ route('user.delete', $user) }}"><button class="btn btn-danger btn-sm">Διαγραφή</button></a>
+                            @endif
+                        </div>
+                    @endif    
+                </div>
             @endforeach
+        </div> --}}
+        
+        
+        <div class="container-sm">
 
-            
-        </div>
-         
+            <div class="row header-border mb-3">
+                <h2>Χρήστες</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <table class="table table-borderless admin-users">
+                        <thead>
+                            <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Ονοματεπώνυμο</th>
+                            <th scope="col">Ψευδώνυμο</th>
+                            <th scope="col">Email</th>
+                            @if (Auth::user()->email == "aaa@gmail.com")
+                                <th scope="col">Κατάσταση</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            @endif
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td scope="row">{{ $user->id }}</td>
+                                    <td>{{ $user->fullname }}</td>
+                                    <td>{{ $user->nickname }}</td>
+                                    <td>{{ $user->email }}</td>
+
+                                    @if (Auth::user()->email == "aaa@gmail.com")
+                                        <td>
+                                            @if ($user->email !== "aaa@gmail.com")
+                                                <form action="" method="POST" id="myForm{{ $user->id }}">
+                                                    @csrf
+                                                    <label class="switch">
+                                                        <input class="status" type="checkbox" name="status" {{ ($user->is_activated) ? ' checked' : '' }}>
+                                                        <span class="slider round"></span>
+                                                    </label>
+                                                    <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                                </form>
+                                            @endif
+                                            @if ($user->email == "aaa@gmail.com") ΕΝΕΡΓΟΣ
+                                            @endif
+                                        </td>
+
+                                        <td>
+                                            @if ($user->email !== "aaa@gmail.com")
+                                                <button class="btn btn-primary btn-sm" type="submit" form="myForm{{ $user->id }}">Αποθήκευση</button>
+                                            @endif
+                                        </td>
+
+                                        <td>
+                                            @if ($user->email !== "aaa@gmail.com")
+                                                <a href="{{ route('user.delete', $user) }}"><button class="btn btn-danger btn-sm">Διαγραφή</button></a>
+                                            @endif
+                                        </td>
+                                    @endif    
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>  
 @endsection

@@ -32,7 +32,6 @@
     border-bottom: 4px double #222;
 }
 
-.admin-users div {
-    display: inline-block;
-    width: 200px;
+.admin-users form {
+    height: 24px;
 }
