@@ -10369,3 +10369,12 @@ input.status:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.post-item img {
+  max-width: 100%;
+}
+
+.post-item .post-headers {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #999;
+}

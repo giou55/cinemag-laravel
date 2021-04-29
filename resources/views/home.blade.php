@@ -25,7 +25,7 @@
                 @foreach ($posts as $post)
                     <div class="blog">
                         @if ($post->image)
-                            <img src="/storage/post_images/{{ $post->image }}" class="rounded-circle" alt="">
+                            <img src="/storage/images/{{ $post->image }}" class="rounded-circle" alt="">
                         @endif
                         <div class="blog-caption">
                             {{ $post->title }} 
@@ -50,7 +50,7 @@
                 @foreach ($first as $f)
                     <div class="first">
                         @if ($f->image)
-                            <img src="/storage/post_images/{{ $f->image }}" alt="">
+                            <img src="/storage/images/{{ $f->image }}" alt="">
                         @endif
                         <h2>
                             <a href="{{ route('post', $f) }}">
@@ -67,7 +67,7 @@
                 @foreach ($right as $r)
                     <div class="right">
                         @if ($r->image)
-                            <img src="/storage/post_images/{{ $r->image }}" alt="">
+                            <img src="/storage/images/{{ $r->image }}" alt="">
                         @endif
                         <h4>
                             <a href="{{ route('post', $r) }}">
@@ -98,7 +98,7 @@
             @foreach ($featured as $f)
                 <div class="col-md-6 featured-post">
                     @if ($f->image)
-                        <img src="/storage/post_images/{{ $f->image }}" alt="">
+                        <img src="/storage/images/{{ $f->image }}" alt="">
                     @endif
                     <h2>
                         <a href="{{ route('post', $f) }}">

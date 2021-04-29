@@ -55,7 +55,7 @@
                                 <td scope="row">{{ $post->id }}</td>
                                 <td>
                                     @if ($post->image)
-                                        <img style="height: 150px" src="/storage/post_images/{{ $post->image }}" alt="">
+                                        <img style="height: 150px" src="/storage/thumbnails/{{ $post->image }}" alt="">
                                     @endif
                                 </td>
                                 <td>{{ $post->title }}</td>

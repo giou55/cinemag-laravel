@@ -1,20 +1,23 @@
-@extends('layouts.admin')
+@extends('layouts.post')
 
 @section('content')
-        <div class="container-sm">
-            <div class="card" style="width: 50%;">
-                @if ($post->image)
-                <img src="/storage/post_images/{{ $post->image }}" class="card-img-top" alt="">
-                @endif
-                <div class="card-body">
-                    <h5 class="card-title">{{ $post->title }}</h5>
-                    <p class="card-text">Κατηγορία: {{ $post->category->title }}</p>
-                    <p class="card-text">{{ $post->body }}</p>
-                    @if (Auth::check() && Auth::user()->id == $post->user->id)
-                    <a href="{{ route('post.edit', $post) }}"><button class="btn btn-primary">Επεξεργασία</button></a>
-                    <a href="{{ route('post.delete', $post) }}"><button class="btn btn-danger">Διαγραφή</button></a>
-                    @endif
-                </div>
+        <div class="container-sm post-item">
+            <div class="row">
+                    <div class="col-12 post-headers">
+                        <div>{{ $post->created_at }}</div>
+                        <h1>{{ $post->title }}</h1>
+                        <p>Συντάκτης: {{ $post->user->fullname }}</p>
+                    </div>
+            </div>
+
+            <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                        @if ($post->image)
+                            <img src="/storage/images/{{ $post->image }}" alt="">
+                        @endif
+                        <p>Κατηγορία: {{ $post->category->title }}</p>
+                        <p>{{ $post->body }}</p>
+                    </div>
             </div>
         </div>
 @endsection

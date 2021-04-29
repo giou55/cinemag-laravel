@@ -35,7 +35,7 @@
                     <div class="mb-3">
                         <div class="col-md-4">
                             @if ($post->image)
-                                <img src="/storage/post_images/{{ $post->image }}" class="card-img-top" alt="">
+                                <img src="/storage/images/{{ $post->image }}" class="card-img-top" alt="">
                             @endif
                         </div>
                     </div>

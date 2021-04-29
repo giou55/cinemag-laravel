@@ -7,7 +7,7 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class AdminController extends Controller
 {
@@ -37,11 +37,19 @@ class AdminController extends Controller
 
             if ($request->hasFile('photo')) {
                 if (isset($post->image)) {
-                    $image_path = public_path('storage/post_images/' . $post->image);
+                    $image_path = public_path('storage/images/' . $post->image);
                     unlink($image_path);
+                    $thumb_path = public_path('storage/thumbnails/' . $post->image);
+                    unlink($thumb_path);
                 }
-                $newfilename = time().$request->file('photo')->getClientOriginalName();
-                $request->file('photo')->storeAs('public/post_images', $newfilename);
+                $image = $request->file('photo');
+                $newfilename = time().$image->getClientOriginalName();
+                $request->file('photo')->storeAs('public/images', $newfilename);
+
+                $img = Image::make($image->path());
+                $img->resize(240, 240);
+                $img->save(public_path('storage/thumbnails/' . $newfilename), 80);
+
                 $post->image = $newfilename;
             }
 
@@ -65,9 +73,24 @@ class AdminController extends Controller
             $post->body = $request->get('body');
             $post->category_id = $request->get('category');
             $post->user_id = Auth::user()->id;
+
             if ($request->hasFile('photo')) {
-                $newfilename = time().$request->file('photo')->getClientOriginalName();
-                $request->file('photo')->storeAs('public/post_images', $newfilename);
+                $image = $request->file('photo');
+                $newfilename = time().$image->getClientOriginalName();
+                // $request->file('photo')->storeAs('public/images', $newfilename);
+                
+                $img = Image::make($image->path());
+                $img->resize(1000, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $img->save(public_path('storage/images/' . $newfilename), 80);
+
+                $img = Image::make($image->path());
+                $img->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $img->save(public_path('storage/thumbnails/' . $newfilename), 80);
+
                 $post->image = $newfilename;
             }
             if ($post->save()) {
@@ -85,8 +108,10 @@ class AdminController extends Controller
     public function delete_post(Post $post) {
         if (Auth::user()->id != $post->user->id) return redirect('posts');
         if (isset($post->image)) {
-            $image_path = public_path('storage/post_images/' . $post->image);
+            $image_path = public_path('storage/images/' . $post->image);
             unlink($image_path);
+            $thumb_path = public_path('storage/thumbnails/' . $post->image);
+            unlink($thumb_path);
         }
         $post->delete();
         return redirect('posts');
