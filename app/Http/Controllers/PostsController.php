@@ -48,6 +48,12 @@ class PostsController extends Controller
         return view('category', ['posts' => $posts, 'title' => 'PODCASTS']);
     }
 
+    public function blog() {
+        $cat = Category::where('url', 'blog')->firstOrFail();
+        $posts = Post::where('category_id', $cat->id)->get();
+        return view('category', ['posts' => $posts, 'title' => 'BLOG']);
+    }
+
     public function search(Request $request) {
         $q = $request->get('q');
         $posts = Post::where('title','like','%'.$q.'%')->orWhere('body','like','%'.$q.'%')->get();

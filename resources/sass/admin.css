@@ -35,3 +35,12 @@
 .admin-users form {
     height: 24px;
 }
+
+.post-image img {
+    max-width: 100%;
+}
+
+#edit-message {
+    padding: 6px 10px;
+    background-color: rgb(162, 252, 222);
+}

@@ -11,6 +11,9 @@
 
         <div class="row">
             <div class="col-md-6">
+                @if (isset($text))
+                    <p id="edit-message">{{ $text }}</p>
+                @endif
                 <form action="" method="POST">
                     @csrf
                     <div class="mb-3">

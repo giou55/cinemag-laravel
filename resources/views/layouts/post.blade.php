@@ -21,7 +21,8 @@
 </head>
 <body>
     <div id="app">
-        @if (Auth::check())
+
+        @if (Auth::check() && Auth::user()->is_activated)
             @include('includes.admin')
         @endif
 
@@ -32,6 +33,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        @include('includes.footer')
+        
     </div>
 </body>
 </html>

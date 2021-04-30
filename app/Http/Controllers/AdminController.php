@@ -54,13 +54,15 @@ class AdminController extends Controller
             }
 
             if ($post->save()) {
-                return redirect('posts');
+                // return redirect('posts');
+                $msg = 'Το άρθρο αποθηκεύτηκε επιτυχώς.';
+                return view('edit_post', ['text' => $msg, 'post' => $post, 'categories' => $categories]);
             } else {
-                $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
+                $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν αποθηκεύτηκε επιτυχώς.';
             }
         }
         if ($request->method()== 'GET') {
-            $msg = "";
+            $msg = NULL;
         }
         return view('edit_post', ['text' => $msg, 'post' => $post, 'categories' => $categories]);
     }
@@ -146,13 +148,15 @@ class AdminController extends Controller
             $category->title = $request->get('title');
             $category->url = $request->get('url');
             if ($category->save()) {
-                return redirect('categories');
+                // return redirect('categories');
+                $msg = 'Η κατηγορία αποθηκεύτηκε επιτυχώς.';
+                return view('edit_category', ['text' => $msg, 'category' => $category]);
             } else {
-                $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
+                $msg = 'Κάτι πήγε στραβά, και η κατηγορία δεν αποθηκεύτηκε επιτυχώς.';
             }
         }
         if ($request->method()== 'GET') {
-            $msg = "";
+            $msg = NULL;
         }
         return view('edit_category', ['text' => $msg, 'category' => $category]);
     }

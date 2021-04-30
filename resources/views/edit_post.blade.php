@@ -10,7 +10,18 @@
         </div>
 
         <div class="row">
+            @if ($post->image)
+                <div class="col-md-6 post-image">
+                    <div> 
+                        <img src="/storage/images/{{ $post->image }}" alt="">
+                    </div>
+                </div>
+            @endif
+
             <div class="col-md-6">
+                @if (isset($text))
+                    <p id="edit-message">{{ $text }}</p>
+                @endif
                 <form action="" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
@@ -31,13 +42,6 @@
                         <label for="body">Κείμενο</label>
                         <textarea class="form-control" name="body" rows="10" cols="30">{{ $post->body }}
                         </textarea>
-                    </div>
-                    <div class="mb-3">
-                        <div class="col-md-4">
-                            @if ($post->image)
-                                <img src="/storage/images/{{ $post->image }}" class="card-img-top" alt="">
-                            @endif
-                        </div>
                     </div>
                     <div class="mb-3">
                         <input class="form-control" type="file" name="photo">
