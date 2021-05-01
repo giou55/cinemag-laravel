@@ -168,27 +168,6 @@ class AdminController extends Controller
         return redirect('categories');
     }
 
-    // public function users(User $user, Request $request) {
-    //     if ($request->method()== 'POST') {
-    //         $user = User::where('id', $request->get('user_id'))->first();
-    //         if ($request->has('status')){
-    //             //Checkbox checked
-    //             $user->is_activated = 1;
-    //         } else {
-    //             //Checkbox not checked
-    //             $user->is_activated = 0;
-    //         }
-    //         if ($user->save()) {
-    //             return redirect('users');
-    //         } else {
-    //             $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
-    //         }
-    //     }
-    //     $users = User::all();
-    //     $msg = "";
-    //     return view('users', ['text' => $msg, 'users' => $users]);
-    // }
-
     public function users() {
         $users = User::all();
         return view('users', ['users' => $users]);
