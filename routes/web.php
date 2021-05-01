@@ -41,6 +41,7 @@ Route::any('/edit_category/{category}', [AdminController::class, 'edit_category'
 Route::any('/delete_category/{category}', [AdminController::class, 'delete_category'])->name('category.delete')->middleware('auth', 'active');
 
 Route::any('/users', [AdminController::class, 'users'])->name('users')->middleware('auth', 'active');
+Route::any('/edit_user/{user}', [AdminController::class, 'edit_user'])->name('user.edit')->middleware('auth', 'active');
 Route::any('/delete_user/{user}', [AdminController::class, 'delete_user'])->name('user.delete')->middleware('auth', 'active');
 
 

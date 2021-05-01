@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container-sm mb-3">
+    <div class="container-sm">
+
         <div class="row header-border mb-3">
             <div class="col-md-4">
                 <h2>Άρθρα</h2>
@@ -62,8 +63,16 @@
                                 <td>{{ $post->category->title }}</td>
                                 <td><?php echo substr($post->body, 0, 200) . '....'; ?></td>
                                 <td>{{ $post->user->fullname }}</td>
-                                <td><a href="{{ route('post.edit', $post) }}"><button class="btn btn-primary btn-sm">Επεξεργασία</button></a></td>
-                                <td><a href="{{ route('post.delete', $post) }}"><button class="btn btn-danger btn-sm">Διαγραφή</button></a></td>
+                                <td>
+                                    @if (Auth::user()->email == $post->user->email || Auth::user()->email == env('ADMIN_EMAIL'))
+                                        <a href="{{ route('post.edit', $post) }}"><button class="btn btn-primary btn-sm">Επεξεργασία</button></a>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if (Auth::user()->email == $post->user->email || Auth::user()->email == env('ADMIN_EMAIL'))
+                                        <a href="{{ route('post.delete', $post) }}"><button class="btn btn-danger btn-sm">Διαγραφή</button></a>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

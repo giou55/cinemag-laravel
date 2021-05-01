@@ -78,7 +78,9 @@
         <div class="container-sm">
 
             <div class="row header-border mb-3">
-                <h2>Χρήστες</h2>
+                <div class="col-md-4">
+                    <h2>Χρήστες</h2>
+                </div>
             </div>
 
             <div class="row">
@@ -90,11 +92,9 @@
                             <th scope="col">Ονοματεπώνυμο</th>
                             <th scope="col">Ψευδώνυμο</th>
                             <th scope="col">Email</th>
-                            @if (Auth::user()->email == "aaa@gmail.com")
-                                <th scope="col">Κατάσταση</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            @endif
+                            <th scope="col">Κατάσταση</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -105,8 +105,19 @@
                                     <td>{{ $user->fullname }}</td>
                                     <td>{{ $user->nickname }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td>{{ ($user->is_activated) ? ' Ενεργοποιημένος' : 'Απενεργοποιημένος' }}</td>
+                                    <td>
+                                        @if (Auth::user()->email == env('ADMIN_EMAIL'))
+                                            <a href="{{ route('user.edit', $user) }}"><button class="btn btn-primary btn-sm">Επεξεργασία</button></a>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if (Auth::user()->email == env('ADMIN_EMAIL') && Auth::user()->email !== $user->email)
+                                            <a href="{{ route('user.delete', $user) }}"><button class="btn btn-danger btn-sm">Διαγραφή</button></a>
+                                        @endif
+                                    </td>
 
-                                    @if (Auth::user()->email == "aaa@gmail.com")
+                                    {{-- @if (Auth::user()->email == "aaa@gmail.com")
                                         <td>
                                             @if ($user->email !== "aaa@gmail.com")
                                                 <form action="" method="POST" id="myForm{{ $user->id }}">
@@ -133,7 +144,7 @@
                                                 <a href="{{ route('user.delete', $user) }}"><button class="btn btn-danger btn-sm">Διαγραφή</button></a>
                                             @endif
                                         </td>
-                                    @endif    
+                                    @endif     --}}
                                 </tr>
                             @endforeach
 

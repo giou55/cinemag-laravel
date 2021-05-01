@@ -125,19 +125,21 @@ class AdminController extends Controller
     }
 
     public function new_category(Request $request) {
+        $categories = Category::all();
         if ($request->method()== 'POST') {
             $category = new Category();
             $category->title = $request->get('title');
             $category->url = $request->get('url');
             if ($category->save()) {
-                return redirect('categories');
+                // return redirect('categories');
+                $msg = 'Η νέα κατηγορία δημιουργήθηκε επιτυχώς.';
+                return view('new_category', ['text' => $msg, 'categories' => $categories]);
             } else {
-                $msg = 'Κάτι πήγε στραβά, και κατηγορία δεν καταχωρήθηκε επιτυχώς.';
+                $msg = 'Κάτι πήγε στραβά, και η κατηγορία δεν δημιουργήθηκε επιτυχώς.';
             }
         }
         if ($request->method()== 'GET') {
-            $categories = Category::all();
-            $msg = "";
+            $msg = NULL;
         }
         return view('new_category', ['text' => $msg, 'categories' => $categories]);
     }
@@ -148,7 +150,6 @@ class AdminController extends Controller
             $category->title = $request->get('title');
             $category->url = $request->get('url');
             if ($category->save()) {
-                // return redirect('categories');
                 $msg = 'Η κατηγορία αποθηκεύτηκε επιτυχώς.';
                 return view('edit_category', ['text' => $msg, 'category' => $category]);
             } else {
@@ -167,25 +168,50 @@ class AdminController extends Controller
         return redirect('categories');
     }
 
-    public function users(User $user, Request $request) {
+    // public function users(User $user, Request $request) {
+    //     if ($request->method()== 'POST') {
+    //         $user = User::where('id', $request->get('user_id'))->first();
+    //         if ($request->has('status')){
+    //             //Checkbox checked
+    //             $user->is_activated = 1;
+    //         } else {
+    //             //Checkbox not checked
+    //             $user->is_activated = 0;
+    //         }
+    //         if ($user->save()) {
+    //             return redirect('users');
+    //         } else {
+    //             $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
+    //         }
+    //     }
+    //     $users = User::all();
+    //     $msg = "";
+    //     return view('users', ['text' => $msg, 'users' => $users]);
+    // }
+
+    public function users() {
+        $users = User::all();
+        return view('users', ['users' => $users]);
+    }
+
+    public function edit_user(User $user, Request $request) {
         if ($request->method()== 'POST') {
-            $user = User::where('id', $request->get('user_id'))->first();
-            if ($request->has('status')){
-                //Checkbox checked
-                $user->is_activated = 1;
-            } else {
-                //Checkbox not checked
-                $user->is_activated = 0;
-            }
+            $user->id = $request->get('id');
+            $user->fullname = $request->get('fullname');
+            $user->nickname = $request->get('nickname');
+            $user->email = $request->get('email');
+            $user->is_activated = $request->get('status');
             if ($user->save()) {
-                return redirect('users');
+                $msg = 'Ο χρήστης αποθηκεύτηκε επιτυχώς.';
+                return view('edit_user', ['text' => $msg, 'user' => $user]);
             } else {
-                $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
+                $msg = 'Κάτι πήγε στραβά, και ο χρήστης δεν αποθηκεύτηκε επιτυχώς.';
             }
         }
-        $users = User::all();
-        $msg = "";
-        return view('users', ['text' => $msg, 'users' => $users]);
+        if ($request->method()== 'GET') {
+            $msg = NULL;
+        }
+        return view('edit_user', ['text' => $msg, 'user' => $user]);
     }
 
     public function delete_user(User $user) {

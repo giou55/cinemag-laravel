@@ -11,6 +11,9 @@
 
             <div class="row">
                 <div class="col-md-6">
+                    @if (isset($text))
+                        <p id="edit-message">{{ $text }}</p>
+                    @endif
                     <form action="" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
@@ -23,8 +26,9 @@
                         </div>
                         <button class="btn btn-primary mb-3" type="submit">Υποβολή</button>
                     </form>
-                    <h2>{{ $text }}</h2>
-                    <h2>Κατηγορίες άρθρων</h2>
+                </div>
+
+                <div class="col-md-6">
                     <ul>
                         @foreach ($categories as $category)
                             <li>{{ $category->title }} (id: {{ $category->id }}, url: {{ $category->url }})</li>
