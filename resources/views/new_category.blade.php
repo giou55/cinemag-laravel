@@ -11,18 +11,15 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    @if (isset($text))
-                        <p id="edit-message">{{ $text }}</p>
-                    @endif
                     <form action="" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="title">Όνομα</label>
-                            <input class="form-control" type="text" name="title">
+                            <input class="form-control" type="text" name="title" required>
                         </div>
                         <div class="mb-3">
                             <label for="url">URL</label>
-                            <input class="form-control" type="text" name="url">
+                            <input class="form-control" type="text" name="url" required>
                         </div>
                         <button class="btn btn-primary mb-3" type="submit">Υποβολή</button>
                     </form>

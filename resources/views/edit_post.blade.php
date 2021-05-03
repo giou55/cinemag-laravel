@@ -25,8 +25,12 @@
                 <form action="" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
+                        <label for="title">ID</label>
+                        <input class="form-control" type="text" name="title" value="{{ $post->id }}" readonly>
+                    </div>
+                    <div class="mb-3">
                         <label for="title">Τίτλος</label>
-                        <input class="form-control" type="text" name="title" value="{{ $post->title }}">
+                        <input class="form-control" type="text" name="title" value="{{ $post->title }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="category">Κατηγορία</label>
@@ -40,7 +44,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="body">Κείμενο</label>
-                        <textarea class="form-control" name="body" rows="10" cols="30">{{ $post->body }}
+                        <textarea class="form-control" name="body" rows="10" cols="30" required>
+                            {{ $post->body }}
                         </textarea>
                     </div>
                     <div class="mb-3">

@@ -15,7 +15,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="title">Τίτλος</label>
-                            <input class="form-control" type="text" name="title">
+                            <input class="form-control" type="text" name="title" required>
                         </div>
                         <div class="mb-3">
                             <label for="category">Κατηγορία</label>
@@ -27,14 +27,13 @@
                         </div>
                         <div class="mb-3">
                             <label for="body">Κείμενο</label>
-                            <textarea class="form-control" name="body" rows="10" cols="30"></textarea>
+                            <textarea class="form-control" name="body" rows="10" cols="30" required></textarea>
                         </div>
                         <div class="mb-3">
                             <input class="form-control" type="file" name="photo">
                         </div>
                         <button class="btn btn-primary mb-3" type="submit">Υποβολή</button>
                     </form>
-                    <h2>{{ $text }}</h2>
                 </div>
             </div>
 

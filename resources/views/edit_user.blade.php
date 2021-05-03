@@ -18,7 +18,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="id">ID</label>
-                        <input class="form-control" type="text" name="id" value="{{ $user->id }}">
+                        <input class="form-control" type="text" name="id" value="{{ $user->id }}" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="fullname">Ονοματεπώνυμο</label>

@@ -54,17 +54,13 @@ class AdminController extends Controller
             }
 
             if ($post->save()) {
-                // return redirect('posts');
-                $msg = 'Το άρθρο αποθηκεύτηκε επιτυχώς.';
-                return view('edit_post', ['text' => $msg, 'post' => $post, 'categories' => $categories]);
+                return redirect('posts')->with('success','Το άρθρο αποθηκεύτηκε επιτυχώς!');
             } else {
-                $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν αποθηκεύτηκε επιτυχώς.';
+                return redirect('posts')->with('error','Κάτι πήγε στραβά, και το άρθρο δεν αποθηκεύτηκε επιτυχώς.');
             }
         }
-        if ($request->method()== 'GET') {
-            $msg = NULL;
-        }
-        return view('edit_post', ['text' => $msg, 'post' => $post, 'categories' => $categories]);
+
+        return view('edit_post', ['post' => $post, 'categories' => $categories]);
     }
 
     public function new_post(Request $request) {
@@ -96,15 +92,12 @@ class AdminController extends Controller
                 $post->image = $newfilename;
             }
             if ($post->save()) {
-                return redirect('posts');
+                return redirect('posts')->with('success','Το νέο άρθρο δημιουργήθηκε επιτυχώς!');
             } else {
-                $msg = 'Κάτι πήγε στραβά, και το άρθρο δεν καταχωρήθηκε επιτυχώς.';
+                return redirect('posts')->with('error','Κάτι πήγε στραβά, και το νέο άρθρο δεν δημιουργήθηκε επιτυχώς.');
             }
         }
-        if ($request->method()== 'GET') {
-            $msg = "";
-        }
-        return view('new_post', ['text' => $msg, 'categories' => $categories]);
+        return view('new_post', ['categories' => $categories]);
     }
 
     public function delete_post(Post $post) {
@@ -115,7 +108,11 @@ class AdminController extends Controller
             $thumb_path = public_path('storage/thumbnails/' . $post->image);
             unlink($thumb_path);
         }
-        $post->delete();
+        if ($post->delete()) {
+            return redirect('posts')->with('success','Το άρθρο διαγράφτηκε επιτυχώς!');
+        } else {
+                return redirect('posts')->with('error','Κάτι πήγε στραβά, και το άρθρο δεν διαγράφτηκε επιτυχώς.');
+            }
         return redirect('posts');
     }
 
@@ -131,17 +128,12 @@ class AdminController extends Controller
             $category->title = $request->get('title');
             $category->url = $request->get('url');
             if ($category->save()) {
-                // return redirect('categories');
-                $msg = 'Η νέα κατηγορία δημιουργήθηκε επιτυχώς.';
-                return view('new_category', ['text' => $msg, 'categories' => $categories]);
+                return redirect('categories')->with('success','Η νέα κατηγορία δημιουργήθηκε επιτυχώς!');
             } else {
-                $msg = 'Κάτι πήγε στραβά, και η κατηγορία δεν δημιουργήθηκε επιτυχώς.';
+                return redirect('categories')->with('error','Κάτι πήγε στραβά, και η νέα κατηγορία δεν δημιουργήθηκε επιτυχώς.');
             }
         }
-        if ($request->method()== 'GET') {
-            $msg = NULL;
-        }
-        return view('new_category', ['text' => $msg, 'categories' => $categories]);
+        return view('new_category', ['categories' => $categories]);
     }
 
     public function edit_category(Category $category, Request $request) {
@@ -150,22 +142,21 @@ class AdminController extends Controller
             $category->title = $request->get('title');
             $category->url = $request->get('url');
             if ($category->save()) {
-                $msg = 'Η κατηγορία αποθηκεύτηκε επιτυχώς.';
-                return view('edit_category', ['text' => $msg, 'category' => $category]);
+                return redirect('categories')->with('success','Η κατηγορία αποθηκεύτηκε επιτυχώς!');
             } else {
-                $msg = 'Κάτι πήγε στραβά, και η κατηγορία δεν αποθηκεύτηκε επιτυχώς.';
+                return redirect('categories')->with('error','Κάτι πήγε στραβά, και η κατηγορία δεν αποθηκεύτηκε επιτυχώς.');
             }
         }
-        if ($request->method()== 'GET') {
-            $msg = NULL;
-        }
-        return view('edit_category', ['text' => $msg, 'category' => $category]);
+        return view('edit_category', ['category' => $category]);
     }
 
     public function delete_category(Category $category) {
         Post::where('category_id', $category->id)->update(['category_id' => 11]);
-        $category->delete();
-        return redirect('categories');
+        if ($category->delete()) {
+                return redirect('categories')->with('success','Η κατηγορία διαγράφτηκε επιτυχώς!');
+        } else {
+            return redirect('categories')->with('error','Κάτι πήγε στραβά, και η κατηγορία δεν διαγράφτηκε επιτυχώς.');
+        }
     }
 
     public function users() {
@@ -181,21 +172,21 @@ class AdminController extends Controller
             $user->email = $request->get('email');
             $user->is_activated = $request->get('status');
             if ($user->save()) {
-                $msg = 'Ο χρήστης αποθηκεύτηκε επιτυχώς.';
-                return view('edit_user', ['text' => $msg, 'user' => $user]);
+                return redirect('users')->with('success','Ο χρήστης αποθηκεύτηκε επιτυχώς!');
             } else {
-                $msg = 'Κάτι πήγε στραβά, και ο χρήστης δεν αποθηκεύτηκε επιτυχώς.';
+                return redirect('users')->with('error','Κάτι πήγε στραβά, και ο χρήστης δεν αποθηκεύτηκε επιτυχώς.');
             }
         }
-        if ($request->method()== 'GET') {
-            $msg = NULL;
-        }
-        return view('edit_user', ['text' => $msg, 'user' => $user]);
+        return view('edit_user', ['user' => $user]);
     }
 
     public function delete_user(User $user) {
         Post::where('user_id', $user->id)->update(['user_id' => 1]);
-        $user->delete();
+        if ($user->delete()) {
+                return redirect('users')->with('success','Ο χρήστης διαγράφτηκε επιτυχώς!');
+            } else {
+                return redirect('users')->with('error','Κάτι πήγε στραβά, και ο χρήστης δεν διαγράφτηκε επιτυχώς.');
+            }
         return redirect('users');
     }
 }
