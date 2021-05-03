@@ -7,11 +7,11 @@
     </div>
 
     <div class="links">
-        <div>Σαν σήμερα</div>
+        <div><a href="{{ route('category', 'san-simera') }}">Σαν σήμερα</a></div>
         <div class="separator"></div>
-        <div>Το σκίτσο της ημέρας</div>
+        <div><a href="{{ route('category', 'skitso-tis-imeras') }}">Το σκίτσο της ημέρας</a></div>
         <div class="separator"></div>
-        <div>Απόψεις</div>
+        <div><a href="{{ route('category', 'apopseis') }}">Απόψεις</a></div>
     </div>
 
     <div id="logo">
@@ -23,11 +23,11 @@
     </div>
 
     <div class="links">
-        <div>Photo of the day</div>
+        <div><a href="{{ route('category', 'photo-of-the-day') }}">Photo of the day</a></div>
         <div class="separator"></div>
-        <div>Τα καλύτερα του 2021</div>
+        <div><a href="{{ route('category', 'best-of-2021') }}">Τα καλύτερα του 2021</a></div>
         <div class="separator"></div>
-        <div>Πρόσωπα</div>
+        <div><a href="{{ route('category', 'prosopa') }}">Πρόσωπα</a></div>
     </div>
 
     <div id="search">

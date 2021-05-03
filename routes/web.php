@@ -26,9 +26,15 @@ Route::get('/youtube', [PostsController::class, 'youtube']);
 Route::get('/books', [PostsController::class, 'books']);
 Route::get('/podcasts', [PostsController::class, 'podcasts']);
 Route::get('/blog', [PostsController::class, 'blog']);
-Route::get('/post/{post}', [AdminController::class, 'post'])->name('post');
+
+Route::get('/category/{category}', [PostsController::class, 'category'])->name('category');
+
+Route::get('/post/{post}', [PostsController::class, 'post'])->name('post');
 Route::any('/search', [PostsController::class, 'search'])->name('search');   
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+/* Administration Routes */
 Route::any('/posts', [AdminController::class, 'posts'])->name('posts.all')->middleware('auth', 'active');
 Route::any('/posts/{category}', [AdminController::class, 'postsByCategory'])->name('posts.category')->middleware('auth', 'active');
 Route::any('/new_post', [AdminController::class, 'new_post'])->name('post.new')->middleware('auth', 'active');
@@ -43,9 +49,6 @@ Route::any('/delete_category/{category}', [AdminController::class, 'delete_categ
 Route::any('/users', [AdminController::class, 'users'])->name('users')->middleware('auth', 'active');
 Route::any('/edit_user/{user}', [AdminController::class, 'edit_user'])->name('user.edit')->middleware('auth', 'active');
 Route::any('/delete_user/{user}', [AdminController::class, 'delete_user'])->name('user.delete')->middleware('auth', 'active');
-
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

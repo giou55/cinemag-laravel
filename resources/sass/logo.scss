@@ -60,6 +60,15 @@
     font-size: 0.82rem;
 }
 
+.links a {
+    color: #000;
+}
+
+.links a:hover {
+    text-decoration: none;
+    color: #00bff3;
+}
+
 .separator {
     height: 1px;
     width: 40px;

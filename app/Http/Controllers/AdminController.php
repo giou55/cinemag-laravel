@@ -11,10 +11,6 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class AdminController extends Controller
 {
-    public function post(Post $post) {
-       return view('post', ['post' => $post]);
-    }
-
     public function posts() {
         $posts = Post::all();
         $categories = Category::all();

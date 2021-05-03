@@ -12,46 +12,14 @@ class PostsController extends Controller
         return view('home');
     }
 
-    public function cinema() {
-        $cat = Category::where('url', 'cinema')->firstOrFail();
-        $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts, 'title' => 'ΣΙΝΕΜΑ']);
+    public function post(Post $post) {
+       return view('post', ['post' => $post]);
     }
 
-    public function theater() {
-        $cat = Category::where('url', 'theater')->firstOrFail();
+    public function category($category) {
+        $cat = Category::where('url', $category)->firstOrFail();
         $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts, 'title' => 'ΘΕΑΤΡΟ']);
-    }
-
-    public function music() {
-        $cat = Category::where('url', 'music')->firstOrFail();
-        $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts, 'title' => 'ΜΟΥΣΙΚΗ']);
-    }
-
-    public function youtube() {
-        $cat = Category::where('url', 'youtube')->firstOrFail();
-        $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts, 'title' => 'YOUTUBE']);
-    }
-
-    public function books() {
-        $cat = Category::where('url', 'books')->firstOrFail();
-        $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts, 'title' => 'ΒΙΒΛΙΑ']);
-    }
-
-    public function podcasts() {
-        $cat = Category::where('url', 'podcasts')->firstOrFail();
-        $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts, 'title' => 'PODCASTS']);
-    }
-
-    public function blog() {
-        $cat = Category::where('url', 'blog')->firstOrFail();
-        $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts, 'title' => 'BLOG']);
+        return view('category', ['posts' => $posts, 'title' => $cat->title]);
     }
 
     public function search(Request $request) {

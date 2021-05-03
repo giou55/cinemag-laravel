@@ -5,7 +5,7 @@
 
             @if(Route::is('home') )
                 <div class="arrow-svg" aria-hidden="true">
-                    <a href="/blog">
+                    <a href="{{ route('category', 'blog') }}">
                         <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="latest-feed-title-arrow-desc">
                             <title id="latest-feed-title-arrow-desc">The Feed</title>
                             <path class="desktop-feed-arrow-background-fill" d="M331.9 223.7s39.7-1.2 64.7-1.2c4.7 0 3.9 3.9 1 7.1-7.8 8.5-170.6 151.2-190.8 169.6-1.2 1.1-2.2 1.1-3.6-.2-18-16.7-184.5-161.9-192.2-170.4-2.3-2.5-.3-6.3 3.3-6.3 42.1 0 65.1-.1 65.1-.1v-98.6C79.3 35.5 123 6.3 180 6.3h179.1c21.7 0 24.6 19.7 24.6 19.7h-17.2c-20.2 0-34.5 31.1-34.5 82.3-.1 12.4-.1 115.4-.1 115.4z" fill="#231f20"></path>
@@ -16,27 +16,27 @@
                 </div>
             @endif
             
-            <a href="/cinema">ΣΙΝΕΜΑ</a>
+            <a href="{{ route('category', 'cinema') }}">ΣΙΝΕΜΑ</a>
 
             <div class="nav-divider"></div>
 
-            <a href="/theater">ΘΕΑΤΡΟ</a>
+            <a href="{{ route('category', 'theater') }}">ΘΕΑΤΡΟ</a>
 
             <div class="nav-divider"></div>
 
-            <a href="/music">ΜΟΥΣΙΚΗ</a>
+            <a href="{{ route('category', 'music') }}">ΜΟΥΣΙΚΗ</a>
 
             <div class="nav-divider"></div>
 
-            <a href="/youtube">YOUTUBE</a>
+            <a href="{{ route('category', 'youtube') }}">YOUTUBE</a>
 
             <div class="nav-divider"></div>
 
-            <a href="/books">ΒΙΒΛΙΑ</a>
+            <a href="{{ route('category', 'books') }}">ΒΙΒΛΙΑ</a>
 
             <div class="nav-divider"></div>
             
-            <a href="/podcasts">PODCASTS</a>
+            <a href="{{ route('category', 'podcasts') }}">PODCASTS</a>
         </div>
     </div>
 </nav>
