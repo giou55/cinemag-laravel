@@ -1,10 +1,27 @@
 <div class="container d-flex justify-content-between align-items-center">
 
-    <div id="menu">
-        <img class="active" src="{{ asset('images/menu-icon-active.jpg') }}" alt="">
-        <img src="{{ asset('images/menu-icon-inactive.jpg') }}" alt="">
-        
-    </div>
+    {{-- <div class="menu">
+        <div class="open-button">
+            <img class="active" src="{{ asset('images/menu-icon-active.jpg') }}" alt="">
+            <img src="{{ asset('images/menu-icon-inactive.jpg') }}" alt="">
+        </div>
+        <div class="menu-content">
+            <div class="close-button">
+                <img class="active" src="{{ asset('images/menu-icon-close-active.jpg') }}" alt="">
+                <img src="{{ asset('images/menu-icon-close-inactive.jpg') }}" alt="">
+            </div>
+            <div class="menu-links">
+                <div><a href="{{ route('category', 'cinema') }}">ΣΙΝΕΜΑ</a></div>
+                <div><a href="{{ route('category', 'theater') }}">ΘΕΑΤΡΟ</a></div>
+                <div><a href="{{ route('category', 'music') }}">ΜΟΥΣΙΚΗ</a></div>
+                <div><a href="{{ route('category', 'youtube') }}">YOUTUBE</a></div>
+                <div><a href="{{ route('category', 'books') }}">ΒΙΒΛΙΑ</a></div>
+                <div><a href="{{ route('category', 'podcasts') }}">PODCASTS</a></div>
+            </div>
+        </div>
+    </div> --}}
+
+    @include('includes.menu')
 
     <div class="links">
         <div><a href="{{ route('category', 'san-simera') }}">Σαν σήμερα</a></div>
@@ -14,7 +31,7 @@
         <div><a href="{{ route('category', 'apopseis') }}">Απόψεις</a></div>
     </div>
 
-    <div id="logo">
+    <div class="logo">
         <a href="{{ route('home') }}"><img src="{{ asset('images/logo-title.png') }}" alt=""></a>
         <div class="caption">
             <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 739.2 115.8" xml:space="preserve">
@@ -30,7 +47,7 @@
         <div><a href="{{ route('category', 'prosopa') }}">Πρόσωπα</a></div>
     </div>
 
-    <div id="search">
+    <div class="search">
         <img class="active" src="{{ asset('images/search-icon-active.jpg') }}" alt="">
         <img src="{{ asset('images/search-icon-inactive.jpg') }}" alt="">
         {{-- <form class="d-flex" method="GET" action="{{ route('search') }}">

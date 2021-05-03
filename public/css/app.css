@@ -10041,33 +10041,65 @@ h3 {
   cursor: pointer;
 }
 
-#menu {
+.menu {
   width: 50px;
   height: 50px;
+  padding: 15px;
   position: relative;
-  cursor: pointer;
 }
 
-#menu img {
-  width: 100%;
+.menu img {
+  width: 50px;
   height: auto;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-#menu:hover img.active {
+.open-button,
+.close-button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.open-button:hover img.active,
+.close-button:hover img.active {
   z-index: 100;
 }
 
-#logo {
+.menu-content {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  top: -20px;
+  left: -20px;
+  width: 360px;
+  padding: 40px 20px 20px 20px;
+  z-index: 1000;
+}
+
+.menu-content img {
+  top: 19px;
+  left: 19px;
+  width: 50px;
+  height: auto;
+}
+
+.menu-links {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.logo {
   width: 520px;
   height: 160px;
   margin-top: 20px;
   z-index: 100;
 }
 
-#logo img {
+.logo img {
   width: 100%;
   height: auto;
   cursor: pointer;
@@ -10079,14 +10111,14 @@ h3 {
   margin-top: -18px;
 }
 
-#search {
+.search {
   width: 50px;
   height: 50px;
   position: relative;
   cursor: pointer;
 }
 
-#search img {
+.search img {
   width: 80%;
   height: auto;
   position: absolute;
@@ -10094,7 +10126,7 @@ h3 {
   left: 0;
 }
 
-#search:hover img.active {
+.search:hover img.active {
   z-index: 100;
 }
 
@@ -10330,62 +10362,6 @@ h3 {
   font-size: 1.5rem;
   font-weight: bold;
   border: 2px solid #333;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-}
-
-.switch input.status {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  transition: 0.4s;
-}
-
-input.status:checked + .slider {
-  background-color: #2196f3;
-}
-
-input.status:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input.status:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
 }
 
 .post-item img {
