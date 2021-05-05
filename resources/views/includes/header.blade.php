@@ -17,13 +17,15 @@
             <div class="d-flex justify-content-between align-items-center links-2">
                     @guest
                         @if (Route::has('login'))
-                            <a href="{{ route('login') }}">{{ __('Login') }}</a> 
+                            {{-- <a href="{{ route('login') }}">{{ __('Login') }}</a>  --}}
+                            <a class="modal_link" data-toggle="modal" data-target="#loginModal">{{ __('Login') }}</a>
                         @endif
 
                         <div class="divider"></div>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                            {{-- <a href="{{ route('register') }}">{{ __('Register') }}</a> --}}
+                            <a class="modal_link" data-toggle="modal" data-target="#registerModal">{{ __('Register') }}</a>
                         @endif
 
                     @else
@@ -40,6 +42,10 @@
                     @endguest
             </div>
         </div>
+
+        @include('includes.login_modal')
+        @include('includes.register_modal')
+
     </div>
 
     <div class="container d-flex justify-content-end align-items-center" id="subscription">

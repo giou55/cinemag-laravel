@@ -21,14 +21,14 @@
         </div>
     </div> --}}
 
-    @include('includes.menu')
+    @include('includes.menu_popup')
 
     <div class="links">
-        <div><a href="{{ route('category', 'san-simera') }}">Σαν σήμερα</a></div>
+        <div><a href="{{ route('posts', 'san-simera') }}">Σαν σήμερα</a></div>
         <div class="separator"></div>
-        <div><a href="{{ route('category', 'skitso-tis-imeras') }}">Το σκίτσο της ημέρας</a></div>
+        <div><a href="{{ route('posts', 'skitso-tis-imeras') }}">Το σκίτσο της ημέρας</a></div>
         <div class="separator"></div>
-        <div><a href="{{ route('category', 'apopseis') }}">Απόψεις</a></div>
+        <div><a href="{{ route('posts', 'apopseis') }}">Απόψεις</a></div>
     </div>
 
     <div class="logo">
@@ -40,11 +40,11 @@
     </div>
 
     <div class="links">
-        <div><a href="{{ route('category', 'photo-of-the-day') }}">Photo of the day</a></div>
+        <div><a href="{{ route('posts', 'photo-of-the-day') }}">Photo of the day</a></div>
         <div class="separator"></div>
-        <div><a href="{{ route('category', 'best-of-2021') }}">Τα καλύτερα του 2021</a></div>
+        <div><a href="{{ route('posts', 'best-of-2021') }}">Τα καλύτερα του 2021</a></div>
         <div class="separator"></div>
-        <div><a href="{{ route('category', 'prosopa') }}">Πρόσωπα</a></div>
+        <div><a href="{{ route('posts', 'prosopa') }}">Πρόσωπα</a></div>
     </div>
 
     <div class="search">

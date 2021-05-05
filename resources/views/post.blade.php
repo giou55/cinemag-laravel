@@ -1,4 +1,4 @@
-@extends('layouts.post')
+@extends('layouts.app')
 
 @section('content')
         <div class="container-sm post-item">

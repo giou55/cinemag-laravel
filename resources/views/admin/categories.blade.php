@@ -11,7 +11,9 @@
 
             <div class="row">
                 <div class="col-md-8">
+
                     @include('includes.message')
+                    
                     <table class="table table-borderless table-sm">
                         <thead>
                             <tr>

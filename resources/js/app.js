@@ -1,12 +1,15 @@
 require("./bootstrap");
 
+// change colors when mouseover on svg
 var svgDiv = document.querySelector(".arrow-svg");
 var svgText = document.querySelector(".desktop-feed-arrow-text-fill");
 var svgMain = document.querySelector(".desktop-feed-arrow-main-fill");
 var svgBg = document.querySelector(".desktop-feed-arrow-background-fill");
 
-svgDiv.addEventListener("mouseover", changeColor);
-svgDiv.addEventListener("mouseout", resetColor);
+if (svgDiv) {
+    svgDiv.addEventListener("mouseover", changeColor);
+    svgDiv.addEventListener("mouseout", resetColor);
+}
 
 function changeColor() {
     svgText.style.fill = "white";
@@ -20,39 +23,31 @@ function resetColor() {
     svgBg.style.fill = "black";
 }
 
-// var openBtn = document.querySelectorAll(".open-button");
-// var closeBtn = document.querySelector(".close-button");
+// toggle popup menu when button clicked
+var openBtn = document.querySelector(".open-button");
+var closeBtn = document.querySelector(".close-button");
 var menuContent = document.querySelector(".menu-content");
 
-// openBtn.addEventListener("click", openMenu);
-// closeBtn.addEventListener("click", closeMenu);
+openBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
 
-// for (var i = 0; i < openBtn.length; i++) {
-//     openBtn[i].addEventListener("click", openMenu);
-// }
+// document.addEventListener("click", function () {
+//         menuContent.style.display = "none";
+//     }
+// );
 
-// for (var i = 0; i < closeBtn.length; i++) {
-//     closeBtn[i].addEventListener("click", closeMenu);
-// }
+// var menu = ocument.querySelector(".menu"); 
+// window.onclick = function (event) {
+//     if (event.target == menu) {
+//         menuContent.style.display = "none";
+//     }
+// };
 
-document.querySelectorAll(".open-button").forEach((item) => {
-    item.addEventListener("click", openMenu);
-});
-
-document.querySelectorAll(".close-button").forEach((item) => {
-    item.addEventListener("click", closeMenu);
-});
 
 function openMenu() {
-    // menuContent.style.display = "block";
-    document.querySelectorAll(".menu-content").forEach((item) => {
-        item.style.display = "block";
-    });
+    menuContent.style.display = "block";
 }
 
 function closeMenu() {
-    // menuContent.style.display = "none";
-    document.querySelectorAll(".menu-content").forEach((item) => {
-        item.style.display = "none";
-    });
+    menuContent.style.display = "none";
 }

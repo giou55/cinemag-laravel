@@ -14,14 +14,14 @@ class AdminController extends Controller
     public function posts() {
         $posts = Post::all();
         $categories = Category::all();
-        return view('posts', ['posts' => $posts, 'categories' => $categories, 'selectedCat' => '']);
+        return view('admin/posts', ['posts' => $posts, 'categories' => $categories, 'selectedCat' => '']);
     }
 
     public function postsByCategory($category) {
         $cat = Category::where('url', $category)->firstOrFail();
         $posts = Post::where('category_id', $cat->id)->get();
         $categories = Category::all();
-        return view('posts', ['posts' => $posts, 'categories' => $categories, 'selectedCat' => $cat]);
+        return view('admin/posts', ['posts' => $posts, 'categories' => $categories, 'selectedCat' => $cat]);
     }
 
     public function edit_post(Post $post, Request $request) {
@@ -50,13 +50,13 @@ class AdminController extends Controller
             }
 
             if ($post->save()) {
-                return redirect('posts')->with('success','Το άρθρο αποθηκεύτηκε επιτυχώς!');
+                return redirect('admin/posts')->with('success','Το άρθρο αποθηκεύτηκε επιτυχώς!');
             } else {
-                return redirect('posts')->with('error','Κάτι πήγε στραβά, και το άρθρο δεν αποθηκεύτηκε επιτυχώς.');
+                return redirect('admin/posts')->with('error','Κάτι πήγε στραβά, και το άρθρο δεν αποθηκεύτηκε επιτυχώς.');
             }
         }
 
-        return view('edit_post', ['post' => $post, 'categories' => $categories]);
+        return view('admin/edit_post', ['post' => $post, 'categories' => $categories]);
     }
 
     public function new_post(Request $request) {
@@ -88,12 +88,12 @@ class AdminController extends Controller
                 $post->image = $newfilename;
             }
             if ($post->save()) {
-                return redirect('posts')->with('success','Το νέο άρθρο δημιουργήθηκε επιτυχώς!');
+                return redirect('admin/posts')->with('success','Το νέο άρθρο δημιουργήθηκε επιτυχώς!');
             } else {
-                return redirect('posts')->with('error','Κάτι πήγε στραβά, και το νέο άρθρο δεν δημιουργήθηκε επιτυχώς.');
+                return redirect('admin/posts')->with('error','Κάτι πήγε στραβά, και το νέο άρθρο δεν δημιουργήθηκε επιτυχώς.');
             }
         }
-        return view('new_post', ['categories' => $categories]);
+        return view('admin/new_post', ['categories' => $categories]);
     }
 
     public function delete_post(Post $post) {
@@ -105,16 +105,16 @@ class AdminController extends Controller
             unlink($thumb_path);
         }
         if ($post->delete()) {
-            return redirect('posts')->with('success','Το άρθρο διαγράφτηκε επιτυχώς!');
+            return redirect('admin/posts')->with('success','Το άρθρο διαγράφτηκε επιτυχώς!');
         } else {
-                return redirect('posts')->with('error','Κάτι πήγε στραβά, και το άρθρο δεν διαγράφτηκε επιτυχώς.');
+                return redirect('admin/posts')->with('error','Κάτι πήγε στραβά, και το άρθρο δεν διαγράφτηκε επιτυχώς.');
             }
         return redirect('posts');
     }
 
     public function categories() {
         $categories = Category::all();
-        return view('categories', ['categories' => $categories]);
+        return view('admin/categories', ['categories' => $categories]);
     }
 
     public function new_category(Request $request) {
@@ -124,12 +124,12 @@ class AdminController extends Controller
             $category->title = $request->get('title');
             $category->url = $request->get('url');
             if ($category->save()) {
-                return redirect('categories')->with('success','Η νέα κατηγορία δημιουργήθηκε επιτυχώς!');
+                return redirect('admin/categories')->with('success','Η νέα κατηγορία δημιουργήθηκε επιτυχώς!');
             } else {
-                return redirect('categories')->with('error','Κάτι πήγε στραβά, και η νέα κατηγορία δεν δημιουργήθηκε επιτυχώς.');
+                return redirect('admin/categories')->with('error','Κάτι πήγε στραβά, και η νέα κατηγορία δεν δημιουργήθηκε επιτυχώς.');
             }
         }
-        return view('new_category', ['categories' => $categories]);
+        return view('admin/new_category', ['categories' => $categories]);
     }
 
     public function edit_category(Category $category, Request $request) {
@@ -138,26 +138,26 @@ class AdminController extends Controller
             $category->title = $request->get('title');
             $category->url = $request->get('url');
             if ($category->save()) {
-                return redirect('categories')->with('success','Η κατηγορία αποθηκεύτηκε επιτυχώς!');
+                return redirect('admin/categories')->with('success','Η κατηγορία αποθηκεύτηκε επιτυχώς!');
             } else {
-                return redirect('categories')->with('error','Κάτι πήγε στραβά, και η κατηγορία δεν αποθηκεύτηκε επιτυχώς.');
+                return redirect('admin/categories')->with('error','Κάτι πήγε στραβά, και η κατηγορία δεν αποθηκεύτηκε επιτυχώς.');
             }
         }
-        return view('edit_category', ['category' => $category]);
+        return view('admin/edit_category', ['category' => $category]);
     }
 
     public function delete_category(Category $category) {
         Post::where('category_id', $category->id)->update(['category_id' => 11]);
         if ($category->delete()) {
-                return redirect('categories')->with('success','Η κατηγορία διαγράφτηκε επιτυχώς!');
+                return redirect('admin/categories')->with('success','Η κατηγορία διαγράφτηκε επιτυχώς!');
         } else {
-            return redirect('categories')->with('error','Κάτι πήγε στραβά, και η κατηγορία δεν διαγράφτηκε επιτυχώς.');
+            return redirect('admin/categories')->with('error','Κάτι πήγε στραβά, και η κατηγορία δεν διαγράφτηκε επιτυχώς.');
         }
     }
 
     public function users() {
         $users = User::all();
-        return view('users', ['users' => $users]);
+        return view('admin/users', ['users' => $users]);
     }
 
     public function edit_user(User $user, Request $request) {
@@ -168,21 +168,21 @@ class AdminController extends Controller
             $user->email = $request->get('email');
             $user->is_activated = $request->get('status');
             if ($user->save()) {
-                return redirect('users')->with('success','Ο χρήστης αποθηκεύτηκε επιτυχώς!');
+                return redirect('admin/users')->with('success','Ο χρήστης αποθηκεύτηκε επιτυχώς!');
             } else {
-                return redirect('users')->with('error','Κάτι πήγε στραβά, και ο χρήστης δεν αποθηκεύτηκε επιτυχώς.');
+                return redirect('admin/users')->with('error','Κάτι πήγε στραβά, και ο χρήστης δεν αποθηκεύτηκε επιτυχώς.');
             }
         }
-        return view('edit_user', ['user' => $user]);
+        return view('admin/edit_user', ['user' => $user]);
     }
 
     public function delete_user(User $user) {
         Post::where('user_id', $user->id)->update(['user_id' => 1]);
         if ($user->delete()) {
-                return redirect('users')->with('success','Ο χρήστης διαγράφτηκε επιτυχώς!');
+                return redirect('admin/users')->with('success','Ο χρήστης διαγράφτηκε επιτυχώς!');
             } else {
-                return redirect('users')->with('error','Κάτι πήγε στραβά, και ο χρήστης δεν διαγράφτηκε επιτυχώς.');
+                return redirect('admin/users')->with('error','Κάτι πήγε στραβά, και ο χρήστης δεν διαγράφτηκε επιτυχώς.');
             }
-        return redirect('users');
+        return redirect('admin/users');
     }
 }

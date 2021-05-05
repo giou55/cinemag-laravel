@@ -19,7 +19,7 @@ class PostsController extends Controller
     public function category($category) {
         $cat = Category::where('url', $category)->firstOrFail();
         $posts = Post::where('category_id', $cat->id)->get();
-        return view('category', ['posts' => $posts, 'title' => $cat->title]);
+        return view('posts', ['posts' => $posts, 'title' => $cat->title]);
     }
 
     public function search(Request $request) {

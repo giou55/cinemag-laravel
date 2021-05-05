@@ -21,15 +21,21 @@
 </head>
 <body>
     <div id="app">
+        
         @if (Auth::check() && Auth::user()->is_activated)
             @include('includes.admin')
         @endif
 
         @include('includes.header')
 
-        @include('includes.logo')
+        @if (Route::current()->getName() == 'home') 
+            @include('includes.logo_home')
+            @include('includes.nav')
+        @endif
 
-        @include('includes.nav')
+        @if (Route::current()->getName() !== 'home') 
+            @include('includes.logo_posts')
+        @endif
 
         <main class="py-4">
             @yield('content')

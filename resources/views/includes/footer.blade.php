@@ -5,17 +5,17 @@
                 <a href="{{ route('home') }}"><img src="{{ asset('images/logo-title.png') }}" alt=""></a>
             </div>
             <div class="divider"></div>
-            <div><a href="{{ route('category', 'cinema') }}">ΣΙΝΕΜΑ</a></div>
+            <div><a href="{{ route('posts', 'cinema') }}">ΣΙΝΕΜΑ</a></div>
             <div class="divider"></div>
-            <div><a href="{{ route('category', 'theater') }}">ΘΕΑΤΡΟ</a></div>
+            <div><a href="{{ route('posts', 'theater') }}">ΘΕΑΤΡΟ</a></div>
             <div class="divider"></div>
-            <div><a href="{{ route('category', 'music') }}">ΜΟΥΣΙΚΗ</a></div>
+            <div><a href="{{ route('posts', 'music') }}">ΜΟΥΣΙΚΗ</a></div>
             <div class="divider"></div>
-            <div><a href="{{ route('category', 'youtube') }}">YOUTUBE</a></div>
+            <div><a href="{{ route('posts', 'youtube') }}">YOUTUBE</a></div>
             <div class="divider"></div>
-            <div><a href="{{ route('category', 'books') }}">ΒΙΒΛΙΑ</a></div>
+            <div><a href="{{ route('posts', 'books') }}">ΒΙΒΛΙΑ</a></div>
             <div class="divider"></div>
-            <div><a href="{{ route('category', 'podcasts') }}">PODCASTS</a></div>
+            <div><a href="{{ route('posts', 'podcasts') }}">PODCASTS</a></div>
     </div>
 
     <div class="container d-flex justify-content-center align-items-center" id="footer-social">
