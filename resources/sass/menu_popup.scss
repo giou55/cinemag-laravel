@@ -1,0 +1,50 @@
+.menu {
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    position: relative;
+}
+
+.menu img {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.open-menu,
+.close-menu {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.open-menu:hover img.active,
+.close-menu:hover img.active {
+    z-index: 100;
+}
+
+.menu-content {
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    top: -20px;
+    left: -20px;
+    width: 360px;
+    padding: 40px 20px 20px 20px;
+    z-index: 1000;
+}
+
+.menu-content img {
+    top: 19px;
+    left: 19px;
+    width: 50px;
+    height: auto;
+}
+
+.menu-links {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}

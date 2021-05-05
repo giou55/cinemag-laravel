@@ -10046,6 +10046,46 @@ h3 {
   cursor: pointer;
 }
 
+.logo {
+  width: 520px;
+  height: 160px;
+  margin-top: 20px;
+  z-index: 100;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.caption {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: -18px;
+}
+
+.links {
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+.links a {
+  color: #000;
+}
+
+.links a:hover {
+  text-decoration: none;
+  color: #00bff3;
+}
+
+.separator {
+  height: 1px;
+  width: 40px;
+  margin: 4px auto;
+  background-color: #00bff3;
+}
+
 .menu {
   width: 50px;
   height: 50px;
@@ -10061,15 +10101,15 @@ h3 {
   left: 0;
 }
 
-.open-button,
-.close-button {
+.open-menu,
+.close-menu {
   width: 50px;
   height: 50px;
   cursor: pointer;
 }
 
-.open-button:hover img.active,
-.close-button:hover img.active {
+.open-menu:hover img.active,
+.close-menu:hover img.active {
   z-index: 100;
 }
 
@@ -10097,63 +10137,55 @@ h3 {
   padding-top: 20px;
 }
 
-.logo {
-  width: 520px;
-  height: 160px;
-  margin-top: 20px;
-  z-index: 100;
-}
-
-.logo img {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-}
-
-.caption {
-  width: 75%;
-  margin: 0 auto;
-  margin-top: -18px;
-}
-
 .search {
   width: 50px;
   height: 50px;
+  padding: 15px;
   position: relative;
-  cursor: pointer;
 }
 
 .search img {
-  width: 80%;
+  width: 50px;
   height: auto;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.search:hover img.active {
+.open-button,
+.close-button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.open-button:hover img.active,
+.close-button:hover img.active {
   z-index: 100;
 }
 
-.links {
-  text-align: center;
-  font-size: 0.82rem;
+.search-content {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  top: -20px;
+  left: -20px;
+  width: 360px;
+  padding: 40px 20px 20px 20px;
+  z-index: 1000;
 }
 
-.links a {
-  color: #000;
+.search-content img {
+  top: 19px;
+  left: 19px;
+  width: 50px;
+  height: auto;
 }
 
-.links a:hover {
-  text-decoration: none;
-  color: #00bff3;
-}
-
-.separator {
-  height: 1px;
-  width: 40px;
-  margin: 4px auto;
-  background-color: #00bff3;
+.search-links {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
 }
 
 #navbar1 {

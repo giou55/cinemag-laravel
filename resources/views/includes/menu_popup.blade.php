@@ -1,10 +1,10 @@
 <div class="menu">
-    <div class="open-button">
+    <div class="open-menu">
         <img class="active" src="{{ asset('images/menu-icon-active.jpg') }}" alt="">
         <img src="{{ asset('images/menu-icon-inactive.jpg') }}" alt="">
     </div>
     <div class="menu-content">
-        <div class="close-button">
+        <div class="close-menu">
             <img class="active" src="{{ asset('images/menu-icon-close-active.jpg') }}" alt="">
             <img src="{{ asset('images/menu-icon-close-inactive.jpg') }}" alt="">
         </div>

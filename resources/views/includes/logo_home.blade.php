@@ -1,26 +1,5 @@
 <div class="container d-flex justify-content-between align-items-center">
 
-    {{-- <div class="menu">
-        <div class="open-button">
-            <img class="active" src="{{ asset('images/menu-icon-active.jpg') }}" alt="">
-            <img src="{{ asset('images/menu-icon-inactive.jpg') }}" alt="">
-        </div>
-        <div class="menu-content">
-            <div class="close-button">
-                <img class="active" src="{{ asset('images/menu-icon-close-active.jpg') }}" alt="">
-                <img src="{{ asset('images/menu-icon-close-inactive.jpg') }}" alt="">
-            </div>
-            <div class="menu-links">
-                <div><a href="{{ route('category', 'cinema') }}">ΣΙΝΕΜΑ</a></div>
-                <div><a href="{{ route('category', 'theater') }}">ΘΕΑΤΡΟ</a></div>
-                <div><a href="{{ route('category', 'music') }}">ΜΟΥΣΙΚΗ</a></div>
-                <div><a href="{{ route('category', 'youtube') }}">YOUTUBE</a></div>
-                <div><a href="{{ route('category', 'books') }}">ΒΙΒΛΙΑ</a></div>
-                <div><a href="{{ route('category', 'podcasts') }}">PODCASTS</a></div>
-            </div>
-        </div>
-    </div> --}}
-
     @include('includes.menu_popup')
 
     <div class="links">
@@ -47,13 +26,16 @@
         <div><a href="{{ route('posts', 'prosopa') }}">Πρόσωπα</a></div>
     </div>
 
-    <div class="search">
+    {{-- <div class="search">
         <img class="active" src="{{ asset('images/search-icon-active.jpg') }}" alt="">
         <img src="{{ asset('images/search-icon-inactive.jpg') }}" alt="">
-        {{-- <form class="d-flex" method="GET" action="{{ route('search') }}">
+
+        <form class="d-flex" method="GET" action="{{ route('search') }}">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
             <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> --}}
-    </div>
+        </form>
+    </div> --}}
+
+    @include('includes.search_popup')
     
 </div>

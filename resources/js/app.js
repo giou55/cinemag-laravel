@@ -23,22 +23,25 @@ function resetColor() {
     svgBg.style.fill = "black";
 }
 
-// toggle popup menu when button clicked
-var openBtn = document.querySelector(".open-button");
-var closeBtn = document.querySelector(".close-button");
+// toggle menu popup when button clicked
+var openMenuBtn = document.querySelector(".open-menu");
+var closeMenuBtn = document.querySelector(".close-menu");
 var menuContent = document.querySelector(".menu-content");
+var app = document.querySelector("#app");
 
-openBtn.addEventListener("click", openMenu);
-closeBtn.addEventListener("click", closeMenu);
+openMenuBtn.addEventListener("click", openMenu);
+closeMenuBtn.addEventListener("click", closeMenu);
 
-// document.addEventListener("click", function () {
-//         menuContent.style.display = "none";
-//     }
-// );
+window.addEventListener("click", function (event) {
+    if (event.target == app) {
+        menuContent.style.display = "none";
+    }
+});
 
-// var menu = ocument.querySelector(".menu"); 
+// var app = document.getElementById("app");
+
 // window.onclick = function (event) {
-//     if (event.target == menu) {
+//     if (event.target == app) {
 //         menuContent.style.display = "none";
 //     }
 // };
@@ -51,3 +54,37 @@ function openMenu() {
 function closeMenu() {
     menuContent.style.display = "none";
 }
+
+
+// toggle search popup when button clicked
+var openSearchBtn = document.querySelector(".open-search");
+var closeSearchBtn = document.querySelector(".close-search");
+var searchContent = document.querySelector(".search-content");
+var app = document.querySelector("#app");
+
+openSearchBtn.addEventListener("click", openSearch);
+closeSearchBtn.addEventListener("click", closeSearch);
+
+window.addEventListener("click", function (event) {
+    if (event.target == app) {
+        menuContent.style.display = "none";
+    }
+});
+
+// var app = document.getElementById("app");
+
+// window.onclick = function (event) {
+//     if (event.target == app) {
+//         menuContent.style.display = "none";
+//     }
+// };
+
+
+function openSearch() {
+    searchContent.style.display = "block";
+}
+
+function closeSearch() {
+    searchContent.style.display = "none";
+}
+
