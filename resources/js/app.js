@@ -46,11 +46,9 @@ window.addEventListener("click", function (event) {
 //     }
 // };
 
-
 function openMenu() {
     menuContent.style.display = "block";
 }
-
 function closeMenu() {
     menuContent.style.display = "none";
 }
@@ -59,7 +57,7 @@ function closeMenu() {
 // toggle search popup when button clicked
 var openSearchBtn = document.querySelector(".open-search");
 var closeSearchBtn = document.querySelector(".close-search");
-var searchContent = document.querySelector(".search-content");
+var searchContainer = document.querySelector(".search-container");
 var app = document.querySelector("#app");
 
 openSearchBtn.addEventListener("click", openSearch);
@@ -67,7 +65,7 @@ closeSearchBtn.addEventListener("click", closeSearch);
 
 window.addEventListener("click", function (event) {
     if (event.target == app) {
-        menuContent.style.display = "none";
+        searchContainer.style.display = "none";
     }
 });
 
@@ -81,10 +79,9 @@ window.addEventListener("click", function (event) {
 
 
 function openSearch() {
-    searchContent.style.display = "block";
+    searchContainer.style.display = "block";
 }
-
 function closeSearch() {
-    searchContent.style.display = "none";
+    searchContainer.style.display = "none";
 }
 
