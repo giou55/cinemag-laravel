@@ -1,18 +1,25 @@
 <header>
     <div class="container d-flex justify-content-between align-items-center" id="header">
         <div class="d-flex justify-content-between align-items-center links-1">
-            <div>LIFO</div><div class="divider"></div>
-            <div>IN.GR</div><div class="divider"></div>
-            <div>ZOUGLA</div><div class="divider"></div>
-            <div>NETFLIX</div><div class="divider"></div>
-            <div>FACEBOOK</div>
+            <div><a href="https://www.lifo.gr/" target="_blank">LIFO</a></div>
+            <div class="divider"></div>
+            <div><a href="https://www.lifo.gr" target="_blank">IN.GR</a></div>
+            <div class="divider"></div>
+            <div><a href="https://www.lifo.gr" target="_blank">ZOUGLA</a></div>
+            <div class="divider"></div>
+            <div><a href="https://www.lifo.gr" target="_blank">NETFLIX</a></div>
+            <div class="divider"></div>
+            <div><a href="https://www.lifo.gr" target="_blank">FACEBOOK</a></div>
         </div>
             
-        <div style="font-size: 1.8rem; font-family:'Times New Roman', Times, serif;">Athens</div>
+        <div>
+            <span style="font-size: 1.4rem; font-family: 'Mystery Quest', cursive;">ATHENS</span>
+        </div>
 
         <div class="d-flex justify-content-between align-items-center links-1">
-            <div>CINEMAGAZINE</div><div class="divider"></div>
-            <div>ATHINORAMA</div>
+            <div><a href="https://www.lifo.gr" target="_blank">CINEMAGAZINE</a></div>
+            <div class="divider"></div>
+            <div><a href="https://www.lifo.gr" target="_blank">ATHINORAMA</a></div>
             
             <div class="d-flex justify-content-between align-items-center links-2">
                     @guest

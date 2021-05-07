@@ -32,7 +32,7 @@
     border: 1px solid #bbb;
     top: -20px;
     left: -20px;
-    width: 360px;
+    width: 300px;
     padding: 40px 20px 20px 20px;
     z-index: 1000;
 }
@@ -47,4 +47,17 @@
 .menu-links {
     border-top: 1px solid #ddd;
     padding-top: 20px;
+}
+
+.menu-links a {
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.menu-links a:hover {
+    text-decoration: none;
+    color: #00bcf1;
 }

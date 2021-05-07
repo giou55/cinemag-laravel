@@ -16,7 +16,7 @@ class PostsController extends Controller
        return view('post', ['post' => $post]);
     }
 
-    public function category($category) {
+    public function posts($category) {
         $cat = Category::where('url', $category)->firstOrFail();
         $posts = Post::where('category_id', $cat->id)->get();
         return view('posts', ['posts' => $posts, 'title' => $cat->title]);
@@ -25,6 +25,6 @@ class PostsController extends Controller
     public function search(Request $request) {
         $q = $request->get('q');
         $posts = Post::where('title','like','%'.$q.'%')->orWhere('body','like','%'.$q.'%')->get();
-        return view('posts', ['posts' => $posts]);
+        return view('search', ['q' => $q, 'posts' => $posts]);
     }
 }

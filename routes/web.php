@@ -19,19 +19,9 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-// Route::get('/cinema', [PostsController::class, 'cinema']);
-// Route::get('/theater', [PostsController::class, 'theater']);
-// Route::get('/music', [PostsController::class, 'music']);
-// Route::get('/youtube', [PostsController::class, 'youtube']);
-// Route::get('/books', [PostsController::class, 'books']);
-// Route::get('/podcasts', [PostsController::class, 'podcasts']);
-// Route::get('/blog', [PostsController::class, 'blog']);
-
-Route::get('/{category}', [PostsController::class, 'category'])->name('posts');
-
-Route::get('/post/{post}', [PostsController::class, 'post'])->name('post');
-Route::any('/search', [PostsController::class, 'search'])->name('search');   
-
+Route::get('/search', [PostsController::class, 'search'])->name('search');   
+Route::get('/{category}', [PostsController::class, 'posts'])->name('posts');
+Route::get('/post/{post}', [PostsController::class, 'post'])->name('post'); 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 

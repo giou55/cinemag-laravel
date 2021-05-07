@@ -2,8 +2,8 @@
 
 @section('content')
         <div class="container-sm" style="position: relative;">
-            <div class="category-title-container">
-                <h1 class="category-title">{{ $title }}</h1>
+            <div class="posts-title-container">
+                <h1 class="posts-title">{{ $title }}</h1>
             </div>
                 
             <div class="row">

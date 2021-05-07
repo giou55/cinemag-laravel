@@ -10010,6 +10010,11 @@ h3 {
   margin: 0 12px;
 }
 
+.links-1 a {
+  font-size: 0.9rem;
+  color: #000;
+}
+
 .links-2 a {
   margin: 0 6px;
   color: #000;
@@ -10120,7 +10125,7 @@ h3 {
   border: 1px solid #bbb;
   top: -20px;
   left: -20px;
-  width: 360px;
+  width: 300px;
   padding: 40px 20px 20px 20px;
   z-index: 1000;
 }
@@ -10135,6 +10140,19 @@ h3 {
 .menu-links {
   border-top: 1px solid #ddd;
   padding-top: 20px;
+}
+
+.menu-links a {
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.menu-links a:hover {
+  text-decoration: none;
+  color: #00bcf1;
 }
 
 .search {
@@ -10253,7 +10271,7 @@ h3 {
 }
 
 .blog-caption span {
-  color: #00bff3;
+  color: #00bcf1;
 }
 
 .blog-body {
@@ -10382,7 +10400,7 @@ h3 {
   border-bottom: 4px double #222;
 }
 
-.category-title-container {
+.posts-title-container {
   right: 0;
   left: 0;
   position: absolute;
@@ -10390,7 +10408,7 @@ h3 {
   text-align: center;
 }
 
-.category-title {
+.posts-title {
   background-color: #fff;
   display: inline-block;
   padding: 6px;
