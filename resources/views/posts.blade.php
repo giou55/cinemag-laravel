@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-        <div class="container-sm" style="position: relative;">
+        <div class="container" style="position: relative;">
             <div class="posts-title-container">
                 <h1 class="posts-title">{{ $title }}</h1>
             </div>
                 
-            <div class="row">
+            <div class="row pt-4">
                 @foreach ($posts as $post)
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                         <div class="mb-3 card">

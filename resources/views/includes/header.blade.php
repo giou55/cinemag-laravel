@@ -3,13 +3,11 @@
         <div class="d-flex justify-content-between align-items-center links-1">
             <div><a href="https://www.lifo.gr/" target="_blank">LIFO</a></div>
             <div class="divider"></div>
-            <div><a href="https://www.lifo.gr" target="_blank">IN.GR</a></div>
+            <div><a href="https://www.in.gr" target="_blank">IN.GR</a></div>
             <div class="divider"></div>
-            <div><a href="https://www.lifo.gr" target="_blank">ZOUGLA</a></div>
+            <div><a href="https://www.zougla.gr" target="_blank">ZOUGLA</a></div>
             <div class="divider"></div>
-            <div><a href="https://www.lifo.gr" target="_blank">NETFLIX</a></div>
-            <div class="divider"></div>
-            <div><a href="https://www.lifo.gr" target="_blank">FACEBOOK</a></div>
+            <div><a href="https://www.athensvoice.gr" target="_blank">ATHENS VOICE</a></div>
         </div>
             
         <div>
@@ -17,9 +15,9 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center links-1">
-            <div><a href="https://www.lifo.gr" target="_blank">CINEMAGAZINE</a></div>
+            <div><a href="https://www.cinemagazine.gr" target="_blank">CINEMAGAZINE</a></div>
             <div class="divider"></div>
-            <div><a href="https://www.lifo.gr" target="_blank">ATHINORAMA</a></div>
+            <div><a href="https://www.athinorama.gr" target="_blank">ATHINORAMA</a></div>
             
             <div class="d-flex justify-content-between align-items-center links-2">
                     @guest
