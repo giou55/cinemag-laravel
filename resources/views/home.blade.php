@@ -15,7 +15,7 @@
                         <div class="blog-caption">
                             {{ $post->title }} 
                             <div class="caption-divider"></div>
-                            <span>{{ $post->created_at }}</span>
+                            <span>{{ $post->created_at->format('d/m/Y') }}</span>
                         </div>
                         <div class="blog-body">
                             <a href="{{ route('post', $post) }}">{{ $post->body }}</a>

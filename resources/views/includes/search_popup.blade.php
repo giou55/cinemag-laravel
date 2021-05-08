@@ -8,7 +8,7 @@
         <div class="search-content">
             <div class="search-form">
                 <form class="d-flex" method="GET" action="{{ route('search') }}">
-                    <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                    <input class="form-control mr-2" type="search" placeholder="Αναζήτηση..." aria-label="Search" name="q">
                 </form>
             </div>
             <div class="close-search">
