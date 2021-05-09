@@ -96,8 +96,23 @@ class AdminController extends Controller
         return view('admin/new_post', ['categories' => $categories]);
     }
 
+    public function delete_image(Post $post) {
+        $image_path = public_path('storage/images/' . $post->image);
+        unlink($image_path);
+        $thumb_path = public_path('storage/thumbnails/' . $post->image);
+        unlink($thumb_path);
+        $post->image = NULL;
+        if ($post->save()) {
+                return redirect('/admin/edit_post/' . $post->id)->with('success', 'Η εικόνα διαγράφτηκε επιτυχώς!');
+        } else {
+            return redirect('/admin/edit_post/' . $post->id)->with('error','Κάτι πήγε στραβά, και η εικόνα δεν διαγράφτηκε επιτυχώς.');
+        }
+
+        
+    }
+
     public function delete_post(Post $post) {
-        if (Auth::user()->id != $post->user->id) return redirect('posts');
+        // if (Auth::user()->id != $post->user->id) return redirect('posts');
         if (isset($post->image)) {
             $image_path = public_path('storage/images/' . $post->image);
             unlink($image_path);

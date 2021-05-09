@@ -30,6 +30,7 @@ Route::any('/admin/posts', [AdminController::class, 'posts'])->name('posts.all')
 Route::any('/admin/posts/{category}', [AdminController::class, 'postsByCategory'])->name('posts.category')->middleware('auth', 'active');
 Route::any('/admin/new_post', [AdminController::class, 'new_post'])->name('post.new')->middleware('auth', 'active');
 Route::any('/admin/edit_post/{post}', [AdminController::class, 'edit_post'])->name('post.edit')->middleware('auth', 'active');
+Route::any('/admin/delete_image/{post}', [AdminController::class, 'delete_image'])->name('image.delete')->middleware('auth', 'active');
 Route::any('/admin/delete_post/{post}', [AdminController::class, 'delete_post'])->name('post.delete')->middleware('auth', 'active');
 Route::any('/admin/categories', [AdminController::class, 'categories'])->name('categories')->middleware('auth', 'active');
 Route::any('/admin/new_category', [AdminController::class, 'new_category'])->name('category.new')->middleware('auth', 'active');

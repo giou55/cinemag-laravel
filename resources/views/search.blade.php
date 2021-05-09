@@ -15,17 +15,17 @@
                 <div class="col-8">
                     @foreach ($posts as $post)
                     <div class="d-flex">
-                        <div class="col-6">
                         @if ($post->image)
-                            <img src="/storage/images/{{ $post->image }}" class="img-fluid" alt="">
+                            <div class="col-6">
+                                <img src="/storage/images/{{ $post->image }}" class="img-fluid" alt="">
+                            </div>
                         @endif
-                        </div>
             
                         <div class="col-6">
                             <p>Κατηγορία: {{ $post->category->title }}</p>
                             <h5><a href="{{ route('post', $post) }}">{{ $post->title }}</a></h5>
                             <p class="card-text">{{ $post->body }}</p>
-                            <p class="card-text">Συντάκτης: {{ $post->user->name }}</p>
+                            <p class="card-text">Συντάκτης: {{ $post->user->fullname }}</p>
                         </div>
                     </div>
                     <br><hr><br>
