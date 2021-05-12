@@ -1,9 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
-#app {
-  font-family: Georgia, serif;
-}
-
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -60,7 +56,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: Georgia, serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -5589,7 +5585,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: Georgia, serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -5691,7 +5687,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: Georgia, serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10033,6 +10029,10 @@ h3 {
   color: #1ebaed;
 }
 
+#loginModal, #registerModal {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .modal_link {
   color: #1ebaed;
   cursor: pointer;
@@ -10263,14 +10263,16 @@ h3 {
   margin: 0 auto 15px auto;
 }
 
-.blog-caption {
-  font-size: 0.75rem;
+.blog-subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
   font-weight: bold;
+  font-family: "Arial Narrow", Arial, sans-serif;
   color: #666;
   text-transform: uppercase;
 }
 
-.caption-divider {
+.sub-divider {
   height: 10px;
   width: 1px;
   display: inline-block;
@@ -10278,17 +10280,28 @@ h3 {
   margin: 0 4px;
 }
 
-.blog-caption span {
+.blog-subtitle span {
   color: #00bcf1;
 }
 
-.blog-body {
-  margin-top: 8px;
+.blog-title {
+  margin-top: 6px;
 }
 
-.blog-body a {
+.blog-title a {
   color: #000;
   font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.blog-title a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #00bff3;
+}
+
+.blog-body {
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 .blog-divider {
@@ -10302,16 +10315,37 @@ h3 {
   width: 100%;
 }
 
-.first a {
-  color: #000;
+.first-title {
+  margin-top: 12px;
+  line-height: 1;
 }
 
-.first a:hover span {
-  display: inline-block;
-  height: 1.8rem;
+.first-title a {
+  color: #000;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.first-title a:hover {
+  text-decoration: none;
   border-bottom: 2px solid #00bff3;
 }
 
+.first-body {
+  margin-top: 4px;
+  font-size: 1.1rem;
+}
+
+/* .first a {
+    color: #000;
+}
+
+.first a:hover span {
+    display: inline-block;
+    height: 1.8rem;
+    border-bottom: 2px solid #00bff3;
+} */
 .right img {
   width: 100%;
 }
@@ -10357,11 +10391,8 @@ h3 {
   width: 100%;
 }
 
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 #admin {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #333;
   padding: 8px 120px;
   border-bottom: 4px solid #0981b1;
@@ -10389,6 +10420,10 @@ h3 {
   width: 100%;
   height: auto;
   cursor: pointer;
+}
+
+#admin-content {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .header-border {

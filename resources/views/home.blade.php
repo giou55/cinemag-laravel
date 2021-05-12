@@ -12,13 +12,18 @@
                         @if ($post->image)
                             <img src="/storage/images/{{ $post->image }}" class="rounded-circle" alt="">
                         @endif
-                        <div class="blog-caption">
-                            {{ $post->title }} 
-                            <div class="caption-divider"></div>
+                        <div class="blog-subtitle">
+                             @if ($post->subtitle)
+                                {{ $post->subtitle }} 
+                                <div class="sub-divider"></div>
+                            @endif
                             <span>{{ $post->created_at->format('d/m/Y') }}</span>
                         </div>
+                        <div class="blog-title">
+                            <a href="{{ route('post', $post) }}">{{ $post->title }}</a>
+                        </div>
                         <div class="blog-body">
-                            <a href="{{ route('post', $post) }}">{{ $post->body }}</a>
+                            <?php echo substr($post->body, 0, 120) . '....'; ?>
                         </div>
                         <div class="blog-divider">
 
@@ -37,13 +42,11 @@
                         @if ($f->image)
                             <img src="/storage/images/{{ $f->image }}" alt="">
                         @endif
-                        <h2>
-                            <a href="{{ route('post', $f) }}">
-                                <span>{{ $f->title }}</span>
-                            </a>
-                        </h2>
-                        <div>
-                            {{ $f->body }}
+                        <div class="first-title">
+                            <a href="{{ route('post', $f) }}">{{ $f->title }}</a>
+                        </div>
+                        <div  class="first-body">
+                            <?php echo substr($f->body, 0, 200) . '....'; ?>
                         </div>
                     </div>
                 @endforeach

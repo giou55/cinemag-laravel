@@ -44,6 +44,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Εικόνα</th>
                         <th scope="col">Τίτλος</th>
+                        <th scope="col">Υπότιτλος</th>
                         <th scope="col">Κατηγορία</th>
                         <th scope="col">Κείμενο</th>
                         <th scope="col">Συντάκτης</th>
@@ -61,6 +62,7 @@
                                     @endif
                                 </td>
                                 <td>{{ $post->title }}</td>
+                                <td>{{ $post->subtitle }}</td>
                                 <td>{{ $post->category->title }}</td>
                                 <td><?php echo substr($post->body, 0, 200) . '....'; ?></td>
                                 <td>{{ $post->user->fullname }}</td>

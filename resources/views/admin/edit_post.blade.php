@@ -29,11 +29,15 @@
                     @csrf
                     <div class="mb-3">
                         <label for="title">ID</label>
-                        <input class="form-control" type="text" name="title" value="{{ $post->id }}" readonly>
+                        <input class="form-control" type="text" name="id" value="{{ $post->id }}" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="title">Τίτλος</label>
                         <input class="form-control" type="text" name="title" value="{{ $post->title }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="title">Υπότιτλος</label>
+                        <input class="form-control" type="text" name="subtitle" value="{{ $post->subtitle }}">
                     </div>
                     <div class="mb-3">
                         <label for="category">Κατηγορία</label>

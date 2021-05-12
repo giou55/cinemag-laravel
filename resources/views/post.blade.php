@@ -4,7 +4,7 @@
         <div class="container-sm post-item">
             <div class="row">
                     <div class="col-12 post-headers">
-                        <div>{{ $post->created_at }}</div>
+                        <div>{{ $post->created_at->format('d/m/Y') }}</div>
                         <h1>{{ $post->title }}</h1>
                         <p>Συντάκτης: {{ $post->user->fullname }}</p>
                     </div>

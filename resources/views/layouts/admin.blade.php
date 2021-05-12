@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <main class="py-4">
+        <main class="py-4" id="admin-content">
             @yield('content')
         </main>
     </div>

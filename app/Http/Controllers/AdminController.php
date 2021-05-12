@@ -28,6 +28,9 @@ class AdminController extends Controller
         $categories = Category::all();
         if ($request->method()== 'POST') {
             $post->title = $request->get('title');
+            if ($request->has('subtitle')) {
+                $post->subtitle = $request->get('subtitle');
+            }
             $post->body = $request->get('body');
             $post->category_id = $request->get('category');
 
@@ -64,6 +67,9 @@ class AdminController extends Controller
         if ($request->method()== 'POST') {
             $post = new Post();
             $post->title = $request->get('title');
+            if ($request->has('subtitle')) {
+                $post->subtitle = $request->get('subtitle');
+            }
             $post->body = $request->get('body');
             $post->category_id = $request->get('category');
             $post->user_id = Auth::user()->id;

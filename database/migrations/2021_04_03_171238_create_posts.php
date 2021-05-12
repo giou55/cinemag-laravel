@@ -17,11 +17,11 @@ class CreatePosts extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title', 255);
+            $table->string('subtitle', 255)->nullable();
             $table->text('body');
             $table->string('image')->nullable();
             $table->integer('user_id');
             $table->integer('category_id');
-            // $table->string('category_url', 255);
         });
     }
 
