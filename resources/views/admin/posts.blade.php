@@ -64,7 +64,15 @@
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->subtitle }}</td>
                                 <td>{{ $post->category->title }}</td>
-                                <td><?php echo substr($post->body, 0, 200) . '....'; ?></td>
+                                <td>
+                                    <?php 
+                                        if (strlen($post->body) > 150) {
+                                            $pos=strpos($post->body, ' ', 150); echo substr($post->body,0,$pos ) . '....'; 
+                                        } else {
+                                            echo $post->body; 
+                                        }
+                                    ?>
+                                </td>
                                 <td>{{ $post->user->fullname }}</td>
                                 <td>
                                     @if (Auth::user()->email == $post->user->email || Auth::user()->email == env('ADMIN_EMAIL'))

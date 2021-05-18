@@ -23,7 +23,7 @@
                             <a href="{{ route('post', $post) }}">{{ $post->title }}</a>
                         </div>
                         <div class="blog-body">
-                            <?php echo substr($post->body, 0, 120) . '....'; ?>
+                            <?php $pos=strpos($post->body, ' ', 120); echo substr($post->body,0,$pos ) . '....'; ?>
                         </div>
                         <div class="blog-divider">
 
@@ -46,7 +46,7 @@
                             <a href="{{ route('post', $f) }}">{{ $f->title }}</a>
                         </div>
                         <div  class="first-body">
-                            <?php echo substr($f->body, 0, 200) . '....'; ?>
+                            <?php $pos=strpos($f->body, ' ', 380); echo substr($f->body,0,$pos ) . '....'; ?>
                         </div>
                     </div>
                 @endforeach
@@ -63,7 +63,7 @@
                             </a>
                         </h4>
                         <div>
-                            {{ $r->body }}
+                            <?php $pos=strpos($r->body, ' ', 200); echo substr($r->body,0,$pos ) . '....'; ?>
                         </div>
                         <div class="wave-hr">
                             <img src="{{ asset('images/wave-hr.svg') }}" alt="">
@@ -94,7 +94,7 @@
                         </a>
                     </h2>
                     <div>
-                        {{ $f->body }}
+                        <?php $pos=strpos($f->body, ' ', 400); echo substr($f->body,0,$pos ) . '....'; ?>
                     </div>
                 </div>
             @endforeach
