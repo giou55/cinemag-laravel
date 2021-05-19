@@ -17,7 +17,7 @@ class HomeController extends Controller
     }
 
    public function index() {
-        $blog_posts = Post::where('category_id', 7)->get();
+        $blog_posts = Post::where('category_id', 7)->get()->sortByDesc('created_at');
         $feat_posts = Post::where('category_id', 8)->get();
         $first_post = Post::where('category_id', 10)->get();
         $right_bar = Post::where('category_id', 9)->get();
