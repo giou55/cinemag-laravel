@@ -16,7 +16,7 @@
                             <img src="/storage/images/{{ $post->image }}" alt="">
                         @endif
                         <p>Κατηγορία: {{ $post->category->title }}</p>
-                        <p><?php $pos=strpos($f->body, ' ', 1700); echo substr($f->body, 0, $pos ) . '....'; ?></p>
+                        <p>{!! $post->body !!}</p>
                     </div>
             </div>
         </div>
