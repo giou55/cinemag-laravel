@@ -10337,19 +10337,11 @@ h3 {
 }
 
 .first-body {
-  margin-top: 4px;
+  margin-top: 8px;
   font-size: 1.1rem;
+  line-height: 1.5;
 }
 
-/* .first a {
-    color: #000;
-}
-
-.first a:hover span {
-    display: inline-block;
-    height: 1.8rem;
-    border-bottom: 2px solid #00bff3;
-} */
 .right {
   text-align: center;
 }
@@ -10378,14 +10370,9 @@ h3 {
 .right-body {
   margin-top: 4px;
   font-size: 0.98rem;
-  line-height: normal;
+  line-height: 1.2;
 }
 
-/* .right a:hover span {
-    display: inline-block;
-    height: 1.3rem;
-    border-bottom: 2px solid #00bff3;
-} */
 .wave-hr {
   margin: 8px 0;
   text-align: center;
@@ -10413,13 +10400,13 @@ h3 {
 
 .featured-title {
   margin-top: 8px;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .featured-title a {
   color: #000;
   font-family: "Arial Narrow", Arial, sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: bold;
 }
 
@@ -10429,9 +10416,9 @@ h3 {
 }
 
 .featured-body {
-  margin-top: 4px;
+  margin-top: 8px;
   font-size: 0.98rem;
-  line-height: normal;
+  line-height: 1.3;
 }
 
 #admin {
@@ -10585,4 +10572,10 @@ footer {
 #footer-social svg {
   margin: 0 14px;
   cursor: pointer;
+}
+
+#footer-copy {
+  font-size: 0.7rem;
+  color: #333;
+  letter-spacing: 2px;
 }

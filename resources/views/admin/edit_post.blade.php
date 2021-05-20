@@ -12,13 +12,10 @@
         <div class="row">
             @if (isset($post->image))
                 <div class="col-md-6 post-image">
-                    {{-- <form action="{{ route('delete.image', $post }}" method="POST">
-                        <button type="submit">Delete image</button>
-                    </form> --}}
-                    <a href="{{ route('image.delete', $post) }}"><button class="btn btn-danger btn-sm mb-1">Διαγραφή εικόνας</button></a>
                     <div> 
                         <img src="/storage/images/{{ $post->image }}" alt="">
                     </div>
+                    <a href="{{ route('image.delete', $post) }}"><button class="btn btn-danger btn-sm mt-1">Διαγραφή εικόνας</button></a>
                 </div>
             @endif
 
@@ -51,7 +48,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="body">Κείμενο</label>
-                        <textarea class="form-control" name="body" rows="10" cols="30" required>{{ $post->body }}</textarea>
+                        <textarea id="textarea1" class="form-control" name="body" rows="20" cols="30" required>{!! $post->body !!}</textarea>
                     </div>
                     <div class="mb-3">
                         <input class="form-control" type="file" name="photo">

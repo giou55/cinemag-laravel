@@ -78,7 +78,7 @@
 
 .first-title a {
     color: #000;
-    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 2.4rem;
     font-weight: bold;
 }
@@ -89,19 +89,10 @@
 }
 
 .first-body {
-    margin-top: 4px;
+    margin-top: 8px;
     font-size: 1.1rem;
+    line-height: 1.5;
 }
-
-/* .first a {
-    color: #000;
-}
-
-.first a:hover span {
-    display: inline-block;
-    height: 1.8rem;
-    border-bottom: 2px solid #00bff3;
-} */
 
 .right {
     text-align: center;
@@ -118,7 +109,7 @@
 
 .right-title a {
     color: #000;
-    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
 }
@@ -131,14 +122,8 @@
 .right-body {
     margin-top: 4px;
     font-size: 0.98rem;
-    line-height: normal;
+    line-height: 1.2;
 }
-
-/* .right a:hover span {
-    display: inline-block;
-    height: 1.3rem;
-    border-bottom: 2px solid #00bff3;
-} */
 
 .wave-hr {
     margin: 8px 0;
@@ -167,13 +152,13 @@
 
 .featured-title {
     margin-top: 8px;
-    line-height: 1.1;
+    line-height: 1;
 }
 
 .featured-title a {
     color: #000;
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.3rem;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 1.6rem;
     font-weight: bold;
 }
 .featured-title a:hover {
@@ -182,8 +167,7 @@
 }
 
 .featured-body {
-    margin-top: 4px;
+    margin-top: 8px;
     font-size: 0.98rem;
-    line-height: normal;
+    line-height: 1.3;
 }
-

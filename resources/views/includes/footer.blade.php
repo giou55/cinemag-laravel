@@ -60,7 +60,7 @@
     </div>
 
     <div class="container d-flex justify-content-center align-items-center" id="footer-copy">
-        FLICHER IS A VOX MEDIA NETWORK. © 2021 VOX MEDIA, LLC. ALL RIGHTS RESERVED.
+        FLICHER.GR © 2021, DESIGN & DEVELOPMENT BY G.GIOURMETAKIS, POWERED BY LARAVEL
     </div>
 
 </footer>

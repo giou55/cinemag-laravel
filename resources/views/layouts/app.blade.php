@@ -41,7 +41,7 @@
             @include('includes.logo_posts')
         @endif
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
 

@@ -66,8 +66,10 @@
                                 <td>{{ $post->category->title }}</td>
                                 <td>
                                     <?php 
-                                        if (strlen($post->body) > 150) {
-                                            $pos=strpos($post->body, ' ', 150); echo substr($post->body,0,$pos ) . '....'; 
+                                        if (strlen($post->body) > 200) {
+                                            $s = html_entity_decode($post->body);
+                                            $pos = strpos($s, ' ', 200); 
+                                            echo substr($s, 0, $pos ) . '....';
                                         } else {
                                             echo $post->body; 
                                         }

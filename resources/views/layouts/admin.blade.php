@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="https://cdn.tiny.cloud/1/9jrmsfhz6djteofpubudrfjih581sj9zx2pbzz8kccjd1y23/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="{{ asset('js/admin-app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -35,5 +36,11 @@
             @yield('content')
         </main>
     </div>
+
+    <script>
+        tinymce.init({
+        selector: '#textarea1'
+        });
+    </script>
 </body>
 </html>

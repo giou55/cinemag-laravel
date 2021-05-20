@@ -16,7 +16,7 @@
                             <img src="/storage/images/{{ $post->image }}" alt="">
                         @endif
                         <p>Κατηγορία: {{ $post->category->title }}</p>
-                        <p>{{ $post->body }}</p>
+                        <p>{!! $post->body !!}</p>
                     </div>
             </div>
         </div>
