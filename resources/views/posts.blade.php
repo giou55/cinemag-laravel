@@ -14,10 +14,11 @@
                             <img src="/storage/images/{{ $post->image }}" class="img-fluid mb-2" alt="">
                         @endif
                             <a href="{{ route('post', $post) }}">{{ $post->title }}</></a>
-                            <p class="post-body">{{ $post->body }}</p>
+                            <div class="post-body">
+                                <?php $pos=strpos($post->body, ' ', 1000); echo substr($post->body, 0, $pos ) . '....'; ?>
+                            </div>
                             <p class="post-editor">{{ $post->user->fullname }}</p>
                             <p>Κατηγορία: {{ $post->category->title }}</p>
-                            
                         </div>
                     </div>
                 @endforeach

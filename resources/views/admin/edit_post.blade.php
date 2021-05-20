@@ -48,7 +48,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="body">Κείμενο</label>
-                        <textarea id="textarea1" class="form-control" name="body" rows="20" cols="30" required>{!! $post->body !!}</textarea>
+                        <textarea id="textarea1" class="form-control" name="body" rows="30" cols="30" required>{!! $post->body !!}</textarea>
                     </div>
                     <div class="mb-3">
                         <input class="form-control" type="file" name="photo">
