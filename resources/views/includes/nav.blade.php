@@ -15,6 +15,10 @@
                     </a>
                 </div>
             @endif
+
+            <a href="/">TV</a>
+
+            <div class="nav-divider"></div>
             
             <a href="/cinema">ΣΙΝΕΜΑ</a>
 

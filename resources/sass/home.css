@@ -63,6 +63,10 @@
     margin: 15px auto;
 }
 
+.blog:last-child .blog-divider {
+    display: none;
+}
+
 .first {
     text-align: center;
 }
@@ -132,6 +136,10 @@
 
 .wave-hr img {
     width: 50%;
+}
+
+.right:last-child .wave-hr {
+    display: none;
 }
 
 .svg-container {

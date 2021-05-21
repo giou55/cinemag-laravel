@@ -23,9 +23,7 @@
                     <div class="blog-body">
                         <?php $pos=strpos($post->body, ' ', 120); echo substr($post->body,0,$pos ) . '....'; ?>
                     </div>
-                    <div class="blog-divider">
-
-                    </div>
+                    <div class="blog-divider"></div>
                 </div>
             @endforeach
         </div>
