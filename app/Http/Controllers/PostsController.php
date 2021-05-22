@@ -22,6 +22,11 @@ class PostsController extends Controller
         return view('posts', ['posts' => $posts, 'title' => $cat->title]);
     }
 
+    public function blog() {
+        $posts = Post::where('category_id', '7')->get();
+        return view('blog', ['posts' => $posts, 'title' => 'BLOG']);
+    }
+
     public function search(Request $request) {
         $q = $request->get('q');
         $posts = Post::where('title','like','%'.$q.'%')->orWhere('body','like','%'.$q.'%')->get();

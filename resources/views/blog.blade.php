@@ -1,15 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-        <div class="container p-5">
-            <div class="row mb-5">
-                <div class="col-12 col-md-8 col-lg-6">
-                    <div>Εμφανίζονται όλα τα αποτελέσματα για:</div>
-                    <form class="d-flex" method="GET" action="{{ route('search') }}">
-                        <input class="form-control form-control-lg mr-2" type="search" aria-label="Search" value="{{ $q }}" name="q">
-                        <button class="btn btn-outline-primary btn-lg" type="submit">Υποβολή</button>
-                    </form>
-                </div>
+        <div class="container p-5" style="position: relative;">
+            <div class="posts-title-container">
+                <h1 class="posts-title">{{ $title }}</h1>
             </div>
 
             <div class="row">

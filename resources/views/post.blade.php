@@ -15,11 +15,11 @@
             </div>
 
             <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="col-12 col-lg-8">
                         @if ($post->image)
-                            <img src="/storage/images/{{ $post->image }}" alt="">
+                            <img class="img-fluid mb-3" src="/storage/images/{{ $post->image }}" alt="">
                         @endif
-                        <p>{!! $post->body !!}</p>
+                        <div class="post-body">{!! $post->body !!}</div>
                     </div>
             </div>
         </div>

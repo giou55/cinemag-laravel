@@ -19,7 +19,8 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/search', [PostsController::class, 'search'])->name('search');   
+Route::get('/search', [PostsController::class, 'search'])->name('search'); 
+Route::get('/blog', [PostsController::class, 'blog'])->name('blog');   
 Route::get('/{category}', [PostsController::class, 'posts'])->name('posts');
 Route::get('/post/{post}', [PostsController::class, 'post'])->name('post'); 
 Route::get('/', [HomeController::class, 'index'])->name('home');

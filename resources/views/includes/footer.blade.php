@@ -5,6 +5,8 @@
                 <a href="{{ route('home') }}"><img src="{{ asset('images/logo-title.png') }}" alt=""></a>
             </div>
             <div class="divider"></div>
+            <div><a href="/">TV</a></div>
+            <div class="divider"></div>
             <div><a href="{{ route('posts', 'cinema') }}">ΣΙΝΕΜΑ</a></div>
             <div class="divider"></div>
             <div><a href="{{ route('posts', 'theater') }}">ΘΕΑΤΡΟ</a></div>

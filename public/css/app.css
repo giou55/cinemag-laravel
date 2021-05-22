@@ -10151,10 +10151,10 @@ h3 {
 .menu-links a {
   color: #000;
   font-family: "Arial Narrow", Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .menu-links a:hover {
@@ -10512,10 +10512,12 @@ h3 {
   font-size: 1.6rem;
   font-weight: bold;
   font-family: "Arial Narrow", Arial, sans-serif;
+  line-height: normal;
 }
 
 .post-container a:hover {
   text-decoration: none;
+  border-bottom: 2px solid #00bff3;
 }
 
 .post-body {
@@ -10553,10 +10555,6 @@ h3 {
   font-family: serif;
 }
 
-.post-item img {
-  max-width: 100%;
-}
-
 .post-item .post-headers {
   margin-bottom: 40px;
   border-bottom: 1px solid #ccc;
@@ -10569,6 +10567,69 @@ h3 {
   letter-spacing: 1px;
   font-style: italic;
   font-weight: bold;
+}
+
+.post-body p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+}
+
+.search-info {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 0.8rem;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 1px;
+  color: #666;
+  font-weight: bold;
+}
+
+.search-info .category {
+  text-transform: uppercase;
+}
+
+.search-info .divider {
+  margin: 0 8px;
+  width: 1px;
+  height: 12px;
+  background-color: #60d5f6;
+}
+
+.search-title a {
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.search-title a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #00bff3;
+}
+
+.search-body {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.search-editor {
+  color: #000;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.search-divider {
+  height: 1px;
+  width: 100%;
+  background-color: #ccc;
+  margin: 30px auto;
+}
+
+.search-post:last-child .search-divider {
+  display: none;
 }
 
 footer {
