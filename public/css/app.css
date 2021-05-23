@@ -10430,21 +10430,17 @@ h3 {
 }
 
 #admin {
+  font-size: 1.4rem;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #333;
+  color: #fff;
   padding: 8px 120px;
   border-bottom: 4px solid #0981b1;
 }
 
-#admin span {
-  color: #eee;
-  margin-right: 80px;
-  font-size: 1.2rem;
-}
-
 #admin a {
-  color: #eee;
-  margin-right: 25px;
+  color: #fff;
+  margin-right: 20px;
   font-size: 1rem;
 }
 

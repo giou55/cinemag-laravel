@@ -10,15 +10,19 @@
             </div>
 
             <div class="row">
+                @include('includes.message')
+            </div>
+
+            <div class="row">
                 <div class="col-md-6">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="" id="new_post_form" action="" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="title">Τίτλος</label>
                             <input class="form-control" type="text" name="title" required>
                         </div>
                         <div class="mb-3">
-                            <label for="title">Υπότιτλος</label>
+                            <label for="subtitle">Υπότιτλος</label>
                             <input class="form-control" type="text" name="subtitle">
                         </div>
                         <div class="mb-3">
@@ -30,14 +34,18 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="body">Κείμενο</label>
-                            <textarea class="form-control" name="body" rows="10" cols="30" required></textarea>
-                        </div>
-                        <div class="mb-3">
+                            <label for="photo">Εικόνα</label>
                             <input class="form-control" type="file" name="photo">
                         </div>
-                        <button class="btn btn-primary mb-3" type="submit">Υποβολή</button>
                     </form>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="body">Κείμενο</label>
+                        <textarea form="new_post_form" class="form-control textarea1" name="body" rows="20" cols="30"></textarea>
+                    </div>
+                    <button form="new_post_form" class="btn btn-primary mb-3" type="submit">Υποβολή</button>
                 </div>
             </div>
 

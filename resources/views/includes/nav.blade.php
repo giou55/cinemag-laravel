@@ -4,7 +4,7 @@
         <div  class="d-flex justify-content-center align-items-center" id="navbar1">
 
             @if(Route::is('home') )
-                <div class="arrow-svg" aria-hidden="true">
+                <div class="arrow-svg d-none d-xl-block" aria-hidden="true">
                     <a href="/blog">
                         <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="latest-feed-title-arrow-desc">
                             <title id="latest-feed-title-arrow-desc">The Feed</title>

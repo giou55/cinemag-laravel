@@ -4,7 +4,7 @@
 <div class="container mt-4">
     <div class="row">
 
-        <div class="col-md-3" id="feed">
+        <div class="d-none d-xl-block col-xl-3" id="feed">
             @foreach ($posts as $post)
                 <div class="blog">
                     @if ($post->image)
@@ -21,14 +21,21 @@
                         <a href="{{ route('post', $post) }}">{{ $post->title }}</a>
                     </div>
                     <div class="blog-body">
-                        <?php $pos=strpos($post->body, ' ', 120); echo substr($post->body,0,$pos ) . '....'; ?>
+                        <?php 
+                            if (strlen($post->body) > 120) {
+                                $p = strpos($post->body, ' ', 120); 
+                                echo substr($post->body, 0, $p ) . '....';
+                            } else {
+                                echo $post->body; 
+                            }
+                        ?>
                     </div>
                     <div class="blog-divider"></div>
                 </div>
             @endforeach
         </div>
 
-        <div class="col-md-9 mt-1">
+        <div class="col-lg-12 col-xl-9 mt-1">
             <div class="container">
                 <div class="row">
 
@@ -42,7 +49,14 @@
                                     <a href="{{ route('post', $f) }}">{{ $f->title }}</a>
                                 </div>
                                 <div class="first-body">
-                                    <?php $pos=strpos($f->body, ' ', 1700); echo substr($f->body, 0, $pos ) . '....'; ?>
+                                    <?php 
+                                        if (strlen($f->body) > 1000) {
+                                            $p = strpos($f->body, ' ', 1000); 
+                                            echo substr($f->body, 0, $p ) . '....';
+                                        } else {
+                                            echo $f->body; 
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         @endforeach

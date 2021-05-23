@@ -2,7 +2,7 @@
 
     @include('includes.menu_popup')
 
-    <div class="links">
+    <div class="links d-none d-xl-block">
         <div><a href="{{ route('posts', 'san-simera') }}">Σαν σήμερα</a></div>
         <div class="separator"></div>
         <div><a href="{{ route('posts', 'skitso-tis-imeras') }}">Το σκίτσο της ημέρας</a></div>
@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="links">
+    <div class="links d-none d-xl-block">
         <div><a href="{{ route('posts', 'photo-of-the-day') }}">Photo of the day</a></div>
         <div class="separator"></div>
         <div><a href="{{ route('posts', 'best-of-2021') }}">Τα καλύτερα του 2021</a></div>

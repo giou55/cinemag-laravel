@@ -26,7 +26,7 @@ class AdminController extends Controller
 
     public function edit_post(Post $post, Request $request) {
         $categories = Category::all();
-        if ($request->method()== 'POST') {
+        if ($request->method() == 'POST') {
             $post->title = $request->get('title');
             if ($request->has('subtitle')) {
                 $post->subtitle = $request->get('subtitle');
@@ -43,10 +43,18 @@ class AdminController extends Controller
                 }
                 $image = $request->file('photo');
                 $newfilename = time().$image->getClientOriginalName();
-                $request->file('photo')->storeAs('public/images', $newfilename);
+                // $request->file('photo')->storeAs('public/images', $newfilename);
 
                 $img = Image::make($image->path());
-                $img->resize(240, 240);
+                // $img->resize(240, 240);
+                $img->resize(1000, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $img->save(public_path('storage/images/' . $newfilename), 80);
+
+                $img->resize(250, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
                 $img->save(public_path('storage/thumbnails/' . $newfilename), 80);
 
                 $post->image = $newfilename;
@@ -64,7 +72,7 @@ class AdminController extends Controller
 
     public function new_post(Request $request) {
         $categories = Category::all();
-        if ($request->method()== 'POST') {
+        if ($request->method() == 'POST') {
             $post = new Post();
             $post->title = $request->get('title');
             if ($request->has('subtitle')) {
@@ -80,19 +88,20 @@ class AdminController extends Controller
                 // $request->file('photo')->storeAs('public/images', $newfilename);
                 
                 $img = Image::make($image->path());
+
                 $img->resize(1000, null, function ($constraint) {
                     $constraint->aspectRatio();
                 });
                 $img->save(public_path('storage/images/' . $newfilename), 80);
 
-                $img = Image::make($image->path());
-                $img->resize(300, null, function ($constraint) {
+                $img->resize(250, null, function ($constraint) {
                     $constraint->aspectRatio();
                 });
                 $img->save(public_path('storage/thumbnails/' . $newfilename), 80);
 
                 $post->image = $newfilename;
             }
+
             if ($post->save()) {
                 return redirect('admin/posts')->with('success','Το νέο άρθρο δημιουργήθηκε επιτυχώς!');
             } else {
@@ -112,9 +121,7 @@ class AdminController extends Controller
                 return redirect('/admin/edit_post/' . $post->id)->with('success', 'Η εικόνα διαγράφτηκε επιτυχώς!');
         } else {
             return redirect('/admin/edit_post/' . $post->id)->with('error','Κάτι πήγε στραβά, και η εικόνα δεν διαγράφτηκε επιτυχώς.');
-        }
-
-        
+        } 
     }
 
     public function delete_post(Post $post) {
