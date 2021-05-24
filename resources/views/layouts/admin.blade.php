@@ -25,6 +25,7 @@
         <div id="app">
             @if (Auth::check())
                 @include('includes.admin')
+                <div style="height: 60px"></div>
             @endif
 
             <div class="container d-flex justify-content-center align-items-center">

@@ -28,6 +28,7 @@
         
         @if (Auth::check() && Auth::user()->is_activated)
             @include('includes.admin')
+            <div style="height: 60px"></div>
         @endif
 
         @include('includes.header')

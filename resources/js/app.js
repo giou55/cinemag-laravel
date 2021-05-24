@@ -29,8 +29,10 @@ var closeMenuBtn = document.querySelector(".close-menu");
 var menuContent = document.querySelector(".menu-content");
 var app = document.querySelector("#app");
 
-openMenuBtn.addEventListener("click", openMenu);
-closeMenuBtn.addEventListener("click", closeMenu);
+if (openMenuBtn && closeMenuBtn) {
+    openMenuBtn.addEventListener("click", openMenu);
+    closeMenuBtn.addEventListener("click", closeMenu);
+} 
 
 window.addEventListener("click", function (event) {
     if (event.target == app) {
@@ -60,8 +62,10 @@ var closeSearchBtn = document.querySelector(".close-search");
 var searchContainer = document.querySelector(".search-container");
 var app = document.querySelector("#app");
 
-openSearchBtn.addEventListener("click", openSearch);
-closeSearchBtn.addEventListener("click", closeSearch);
+if (openSearchBtn && closeSearchBtn) {
+    openSearchBtn.addEventListener("click", openSearch);
+    closeSearchBtn.addEventListener("click", closeSearch);
+}
 
 window.addEventListener("click", function (event) {
     if (event.target == app) {
