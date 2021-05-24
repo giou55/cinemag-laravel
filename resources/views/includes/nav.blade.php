@@ -1,7 +1,7 @@
 <nav class="bg-white">
     <div class="container">
 
-        <div  class="d-flex justify-content-center align-items-center" id="navbar1">
+        <div class="d-flex justify-content-center align-items-center" id="navbar1">
 
             @if(Route::is('home') )
                 <div class="arrow-svg d-none d-xl-block" aria-hidden="true">

@@ -1,60 +1,37 @@
-{{-- <div id="admin" class="d-flex justify-content-between align-items-center">
-
-    <div class="d-flex justify-content-start align-items-center">
-        <span>Πίνακας Ελέγχου</span>
-        <a href="{{ route('posts.all') }}">Άρθρα</a>
-        <a href="{{ route('categories') }}">Κατηγορίες</a>
-        <a href="{{ route('post.new') }}">Νέο άρθρο</a>
-        @if (Auth::user()->email == env('ADMIN_EMAIL'))
-            <a href="{{ route('category.new') }}">Νέα κατηγορία</a>
-        @endif
-        <a href="{{ route('users') }}">Χρήστες</a>
-    </div>
-
-    <div>
-        <a>{{ Auth::user()->fullname }}</a>
-
-        <a href="{{ route('logout') }}"
-            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
-        </a>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-        </form>
-    </div>
-
-</div> --}}
-
 <div id="admin">
-    <div class="container-fluid">
-        <div class="row">
 
-            <div class="col-12 col-lg-2 col-xl-2">Πίνακας Ελέγχου</div>
-            
-            <div class="col-12 col-lg-8 col-xl-7">
-                <a href="{{ route('posts.all') }}">Άρθρα</a>
-                <a href="{{ route('categories') }}">Κατηγορίες</a>
-                <a href="{{ route('post.new') }}">Νέο άρθρο</a>
-                @if (Auth::user()->email == env('ADMIN_EMAIL'))
-                    <a href="{{ route('category.new') }}">Νέα κατηγορία</a>
-                @endif
-                <a href="{{ route('users') }}">Χρήστες</a>
-            </div>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
 
-            <div class="col-12 col-lg-2 col-xl-3">
-                <a>{{ Auth::user()->fullname }}</a>
+        <div class="container">
 
-                <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </div>
+            <div class="mr-5">Πίνακας Ελέγχου</div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('posts.all') }}">Άρθρα</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('categories') }}">Κατηγορίες</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('post.new') }}">Νέο άρθρο</a>
+                    </li>  
+                    @if (Auth::user()->email == env('ADMIN_EMAIL'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('category.new') }}">Νέα κατηγορία</a>
+                        </li>
+                    @endif   
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('users') }}">Χρήστες</a>
+                    </li>   
+                </ul>
+            </div>  
 
         </div>
-    </div>
+
+    </nav>
+
 </div>
