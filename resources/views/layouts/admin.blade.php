@@ -25,13 +25,22 @@
         <div id="app">
             @if (Auth::check())
                 @include('includes.admin')
-                <div style="height: 60px"></div>
+                <div style="height: 80px"></div>
             @endif
 
-            <div class="container d-flex justify-content-center align-items-center">
+            {{-- <div class="container d-flex justify-content-center align-items-center">
                 <div id="admin-logo">
                     <a href="{{ route('home') }}"><img src="{{ asset('images/logo-title.png') }}" alt=""></a>
                 </div>
+            </div> --}}
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                        <a href="{{ route('home') }}"><img src="{{ asset('images/logo-title.png') }}" class="img-fluid" alt=""></a>
+                    </div>
+                </div>
+                
             </div>
 
             <main class="py-4" id="admin-content">

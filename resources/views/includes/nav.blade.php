@@ -1,5 +1,5 @@
-<nav class="bg-white">
-    <div class="container">
+<nav class="bg-white d-none d-md-block">
+    <div class="container-xl">
 
         <div class="d-flex justify-content-center align-items-center" id="navbar1">
 

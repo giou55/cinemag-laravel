@@ -7,7 +7,7 @@
 #navbar1 a {
     color: #000;
     font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     padding: 0.4rem;
 }
@@ -19,8 +19,8 @@
 
 .nav-divider {
     width: 1px;
-    height: 22px;
-    margin: 0 6px;
+    height: 15px;
+    margin: 0 4px;
     background-color: #777;
 }
 
@@ -32,3 +32,14 @@
     top: -11px;
     cursor: pointer;
 }
+
+@media screen and (min-width: 992px) {
+    #navbar1 a {
+        font-size: 1.5rem;
+    }
+    .nav-divider {
+        height: 22px;
+        margin: 0 6px;
+    }
+}
+

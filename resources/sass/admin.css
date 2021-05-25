@@ -11,18 +11,6 @@
     font-size: 1rem;
 }
 
-#admin-logo {
-    width: 300px;
-    height: 80px;
-    margin-top: 20px;
-}
-
-#admin-logo img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-}
-
 #admin-content {
     font-family: Arial, Helvetica, sans-serif;
 }
