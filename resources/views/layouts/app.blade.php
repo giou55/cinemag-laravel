@@ -42,6 +42,8 @@
             @include('includes.logo_posts')
         @endif
 
+        <div class="d-block d-md-none" style="height: 2px; background-color:#333;"></div>
+
         <main>
             @yield('content')
         </main>

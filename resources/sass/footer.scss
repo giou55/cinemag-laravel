@@ -9,8 +9,14 @@ footer {
     font-weight: bold;
 }
 
-#footer-nav img {
-    width: 110px;
+.footer-logo {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 40%;
+    margin: 15px auto;
 }
 
 #footer-nav div {
@@ -47,5 +53,14 @@ footer {
     font-size: 0.7rem;
     color: #333;
     letter-spacing: 2px;
-
 }
+
+@media screen and (min-width: 576px) {
+    .footer-logo {
+        width: 110px;
+    }
+    .footer-logo img {
+        width: 100%;
+    }
+}
+

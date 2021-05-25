@@ -1,7 +1,7 @@
 <footer>
 
-    <div class="container d-flex justify-content-center align-items-center" id="footer-nav">
-            <div>
+    <div class="container d-flex flex-wrap justify-content-center align-items-center" id="footer-nav">
+            <div class="footer-logo">
                 <a href="{{ route('home') }}"><img src="{{ asset('images/logo-title.png') }}" alt=""></a>
             </div>
             <div class="divider"></div>

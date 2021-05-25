@@ -26,7 +26,7 @@
                                             <a href="{{ route('post', $post) }}">{{ $post->title }}</a>
                                         </div>
                                         <div class="search-body">
-                                            <?php $pos=strpos($post->body, ' ', 1500); echo substr($post->body, 0, $pos ) . '....'; ?>
+                                            <?php $pos=strpos($post->body, ' ', 600); echo substr($post->body, 0, $pos ) . '....'; ?>
                                         </div>
                                         <p class="search-editor">{{ $post->user->fullname }}</p>
                                     </div>

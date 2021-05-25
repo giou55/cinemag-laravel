@@ -65,21 +65,29 @@
                     <div class="col-md-4">
                         @foreach ($right as $r)
                             <div class="right">
-                                @if ($r->image)
-                                    <img src="/storage/images/{{ $r->image }}" alt="">
-                                @endif
-                                <div class="right-title">
-                                    <a href="{{ route('post', $r) }}">
-                                        <span>{{ $r->title }}</span>
-                                    </a>
+                                <div class="row">
+                                    <div class="col-5 col-md-12 align-self-center">
+                                        @if ($r->image)
+                                            <img class="img-fluid" src="/storage/images/{{ $r->image }}" alt="">
+                                        @endif
+                                    </div>
+
+                                    <div class="col-7 col-md-12">
+                                        <div class="right-title">
+                                            <a href="{{ route('post', $r) }}">
+                                                <span>{{ $r->title }}</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="right-body">
+                                            <?php $pos=strpos($r->body, ' ', 200); echo substr($r->body, 0, $pos ) . '....'; ?>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="right-body">
-                                    <?php $pos=strpos($r->body, ' ', 200); echo substr($r->body, 0, $pos ) . '....'; ?>
-                                </div>
-                                <div class="wave-hr">
+
+                                <div class="col-12 wave-hr">
                                     <img src="{{ asset('images/wave-hr.svg') }}" alt="">
                                 </div>
-                                
                             </div>
                         @endforeach
                     </div>
