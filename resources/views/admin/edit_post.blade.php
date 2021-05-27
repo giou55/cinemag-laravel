@@ -30,7 +30,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="title">Τίτλος</label>
-                        <input class="form-control" type="text" name="title" value="{{ $post->title }}" required>
+                        <input class="form-control" type="text" name="title" value="{{ $post->title }}">
                     </div>
                     <div class="mb-3">
                         <label for="title">Υπότιτλος</label>

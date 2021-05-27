@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\User;
+
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
 use Intervention\Image\ImageManagerStatic as Image;
 
 class AdminController extends Controller
@@ -27,6 +31,16 @@ class AdminController extends Controller
     public function edit_post(Post $post, Request $request) {
         $categories = Category::all();
         if ($request->method() == 'POST') {
+            $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'body' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect('admin/edit_post/'.$post->id)
+                ->with('error','Ο Τίτλος και το Κείμενο είναι υποχρεωτικά πεδία.');
+            }
+
             $post->title = $request->get('title');
             if ($request->has('subtitle')) {
                 $post->subtitle = $request->get('subtitle');
@@ -73,6 +87,16 @@ class AdminController extends Controller
     public function new_post(Request $request) {
         $categories = Category::all();
         if ($request->method() == 'POST') {
+            $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'body' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect('admin/new_post')
+                ->with('error','Ο Τίτλος και το Κείμενο είναι υποχρεωτικά πεδία.');
+            }
+
             $post = new Post();
             $post->title = $request->get('title');
             if ($request->has('subtitle')) {
@@ -190,6 +214,17 @@ class AdminController extends Controller
 
     public function edit_user(User $user, Request $request) {
         if ($request->method()== 'POST') {
+            $validator = Validator::make($request->all(), [
+                'fullname' => 'required',
+                'nickname' => 'required',
+                'email' => 'required'
+            ]);
+
+            if ($validator->fails()) {
+                return redirect('admin/edit_user/'.$user->id)
+                ->with('error','Όλα τα πεδία πρέπει να είναι συμπληρωμένα.');
+            }
+
             $user->id = $request->get('id');
             $user->fullname = $request->get('fullname');
             $user->nickname = $request->get('nickname');

@@ -19,7 +19,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="title">Τίτλος</label>
-                            <input class="form-control" type="text" name="title" required>
+                            <input class="form-control" type="text" name="title">
                         </div>
                         <div class="mb-3">
                             <label for="subtitle">Υπότιτλος</label>
