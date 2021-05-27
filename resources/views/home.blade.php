@@ -35,11 +35,11 @@
             @endforeach
         </div>
 
-        <div class="col-lg-12 col-xl-9 mt-1">
+        <div class="col-lg-12 col-xl-9">
             <div class="container">
                 <div class="row">
 
-                    <div class="col-md-8">
+                    <div class="col-md-8 mt-1">
                         @foreach ($first as $f)
                             <div class="first">
                                 @if ($f->image)
@@ -62,7 +62,7 @@
                         @endforeach
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-1">
                         @foreach ($right as $r)
                             <div class="right">
                                 <div class="row">
@@ -80,7 +80,14 @@
                                         </div>
 
                                         <div class="right-body">
-                                            <?php $pos=strpos($r->body, ' ', 200); echo substr($r->body, 0, $pos ) . '....'; ?>
+                                            <?php 
+                                                if (strlen($r->body) > 200) {
+                                                    $p = strpos($r->body, ' ', 200); 
+                                                    echo substr($r->body, 0, $p ) . '....';
+                                                } else {
+                                                    echo $r->body; 
+                                                }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +117,14 @@
                                 </a>
                             </div>
                             <div class="featured-body">
-                                <?php $pos=strpos($f->body, ' ', 400); echo substr($f->body, 0, $pos ) . '....'; ?>
+                                <?php 
+                                    if (strlen($f->body) > 400) {
+                                        $p = strpos($f->body, ' ', 400); 
+                                        echo substr($f->body, 0, $p ) . '....';
+                                    } else {
+                                        echo $f->body; 
+                                    }
+                                ?>
                             </div>
                         </div>
                     @endforeach

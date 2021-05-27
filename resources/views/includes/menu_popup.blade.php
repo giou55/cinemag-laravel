@@ -9,7 +9,7 @@
             <img src="{{ asset('images/menu-icon-close-inactive.jpg') }}" alt="">
         </div>
         <div class="menu-links">
-            <div><a href="/">TV</a></div>
+            <div><a href="{{ route('posts', 'tv') }}">TV</a></div>
             <div><a href="{{ route('posts', 'cinema') }}">ΣΙΝΕΜΑ</a></div>
             <div><a href="{{ route('posts', 'theater') }}">ΘΕΑΤΡΟ</a></div>
             <div><a href="{{ route('posts', 'music') }}">ΜΟΥΣΙΚΗ</a></div>

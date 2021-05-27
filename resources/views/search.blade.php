@@ -26,13 +26,20 @@
                                             <a href="{{ route('post', $post) }}">{{ $post->title }}</a>
                                         </div>
                                         <div class="search-body">
-                                            <?php $pos=strpos($post->body, ' ', 600); echo substr($post->body, 0, $pos ) . '....'; ?>
+                                            <?php 
+                                                if (strlen($post->body) > 400) {
+                                                    $p = strpos($post->body, ' ', 400); 
+                                                    echo substr($post->body, 0, $p ) . '....';
+                                                } else {
+                                                    echo $post->body; 
+                                                }
+                                            ?>
                                         </div>
                                         <p class="search-editor">{{ $post->user->fullname }}</p>
                                     </div>
                                     @if ($post->image)
-                                        <div class="col-12 col-md-4">
-                                            <img src="/storage/images/{{ $post->image }}" class="img-fluid" alt="">
+                                        <div class="col-12 col-md-3">
+                                            <img src="/storage/images/{{ $post->image }}" class="img-fluid ml-5 mt-3" alt="">
                                         </div>
                                     @endif
                                     <div class="search-divider"></div>

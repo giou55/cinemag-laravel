@@ -16,11 +16,11 @@
                 </div>
             @endif
 
-            <a href="/">TV</a>
+            <a href="{{ route('posts', 'tv') }}">TV</a>
 
             <div class="nav-divider"></div>
             
-            <a href="/cinema">ΣΙΝΕΜΑ</a>
+            <a href="{{ route('posts', 'cinema') }}">ΣΙΝΕΜΑ</a>
 
             <div class="nav-divider"></div>
 

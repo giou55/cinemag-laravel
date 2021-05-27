@@ -68,8 +68,8 @@
                                     <td>{{ $post->category->title }}</td>
                                     <td>
                                         <?php 
-                                            if (strlen($post->body) > 400) {
-                                                $p = strpos($post->body, ' ', 400); 
+                                            if (strlen($post->body) > 200) {
+                                                $p = strpos($post->body, ' ', 200); 
                                                 echo substr($post->body, 0, $p ) . '....';
                                             } else {
                                                 echo $post->body; 
