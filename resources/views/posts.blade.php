@@ -15,7 +15,14 @@
                             @endif
                             <a href="{{ route('post', $post) }}">{{ $post->title }}</></a>
                             <div class="post-body">
-                                <?php $pos=strpos($post->body, ' ', 1000); echo substr($post->body, 0, $pos ) . '....'; ?>
+                                <?php 
+                                    if (strlen($post->body) > 900) {
+                                        $p = strpos($post->body, ' ', 900); 
+                                        echo substr($post->body, 0, $p ) . '....';
+                                    } else {
+                                        echo $post->body; 
+                                    }
+                                ?>
                             </div>
                             <div class="post-editor">
                                 {{ $post->user->fullname }}
