@@ -1,0 +1,188 @@
+#feed {
+    margin-top: 80px;
+    padding-right: 30px;
+}
+
+.blog {
+    line-height: 1.2;
+}
+
+.blog img {
+    max-width: 80%;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    padding: 6px;
+    margin: 0 auto 15px auto;
+}
+
+.blog-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.sub-divider {
+    height: 10px;
+    width: 1px;
+    display: inline-block;
+    background-color: #ccc;
+    margin: 0 4px;
+}
+
+.blog-subtitle span {
+    color: #00bcf1;
+}
+
+.blog-title {
+    margin-top: 6px;
+}
+
+.blog-title a {
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.blog-title a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #00bff3;
+}
+
+.blog-body {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.blog-divider {
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
+    margin: 15px auto;
+}
+
+.blog:last-child .blog-divider {
+    display: none;
+}
+
+.first {
+    text-align: center;
+}
+
+.first img {
+    width: 100%;
+}
+
+.first-title {
+    margin-top: 12px;
+    line-height: 1;
+}
+
+.first-title a {
+    color: #000;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.first-title a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #00bff3;
+}
+
+.first-body {
+    margin-top: 8px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.right {
+    text-align: left;
+}
+
+.right img {
+    width: 100%;
+}
+
+.right-title {
+    margin-top: 8px;
+    line-height: 1.1;
+}
+
+.right-title a {
+    color: #000;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.right-title a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #00bff3;
+}
+
+.right-body {
+    margin-top: 4px;
+    font-size: 0.98rem;
+    line-height: 1.2;
+}
+
+.wave-hr {
+    margin: 0 0 16px 0;
+    text-align: center;
+}
+
+.wave-hr img {
+    width: 50%;
+}
+
+.right:last-child .wave-hr {
+    display: none;
+}
+
+.svg-container {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 4px double #222;
+    text-align: center;
+}
+
+.svg-container svg {
+    width: 35%;
+    margin: 0 auto;
+}
+
+.featured img {
+    width: 100%;
+}
+
+.featured-title {
+    margin-top: 8px;
+    line-height: 1;
+}
+
+.featured-title a {
+    color: #000;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.featured-title a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #00bff3;
+}
+
+.featured-body {
+    margin-top: 8px;
+    font-size: 0.98rem;
+    line-height: 1.3;
+}
+
+@media screen and (min-width: 768px) {
+    .right {
+        text-align: center;
+    }
+}
+

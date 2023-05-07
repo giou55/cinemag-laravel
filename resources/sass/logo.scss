@@ -1,0 +1,60 @@
+.logo {
+    width: 200px;
+    height: 80px;
+    margin-top: 20px;
+    z-index: 100;
+}
+
+.caption {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: -6px;
+}
+
+.links {
+    text-align: center;
+    font-size: 0.82rem;
+}
+
+.links a {
+    color: #000;
+}
+
+.links a:hover {
+    text-decoration: none;
+    color: #00bff3;
+}
+
+.separator {
+    height: 1px;
+    width: 40px;
+    margin: 4px auto;
+    background-color: #00bff3;
+}
+
+@media screen and (min-width: 768px) {
+    .logo {
+        width: 420px;
+        height: 140px;
+        margin-top: 20px;
+        z-index: 100;
+    }
+    .caption {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: -14px;
+    }
+}
+@media screen and (min-width: 992px) {
+    .logo {
+        width: 520px;
+        height: 160px;
+        margin-top: 20px;
+        z-index: 100;
+    }
+    .caption {
+        width: 75%;
+        margin: 0 auto;
+        margin-top: -18px;
+    }
+}

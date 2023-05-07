@@ -1,0 +1,48 @@
+.logo-category {
+    border-bottom: 4px double #222;
+}
+
+.posts-title-container {
+    right: 0;
+    left: 0;
+    position: absolute;
+    top: -25px;
+    text-align: center;
+}
+
+.posts-title {
+    background-color: #fff;
+    display: inline-block;
+    padding: 6px;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: 2px solid #333;
+}
+
+.post-container {
+    text-align: center;
+}
+
+.post-container a {
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    line-height: normal;
+}
+
+.post-container a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #00bff3;
+}
+
+.post-body {
+    font-size: 1rem;
+}
+
+.post-editor {
+    text-transform: uppercase;
+    color: #222;
+    font-size: 0.76rem;
+}
